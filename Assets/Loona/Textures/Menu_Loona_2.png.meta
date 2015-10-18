@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: fae9dbaf3cd38194abd55e19fbbf6d6f
+timeCreated: 1443207931
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Menu_Loona_2_0
+    21300002: Menu_Loona_2_1
+    21300004: Menu_Loona_2_2
+    21300006: Menu_Loona_2_3
+    21300008: Menu_Loona_2_4
+    21300010: Menu_Loona_2_5
+    21300012: Menu_Loona_2_6
+    21300014: Menu_Loona_2_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Menu_Loona_2_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 620
+        width: 322
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_1
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 737
+        width: 837
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_2
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 769
+        width: 184
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_3
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 727
+        width: 161
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 196
+        width: 287
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_5
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 127
+        width: 516
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_6
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 136
+        width: 516
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Menu_Loona_2_7
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 49
+        width: 396
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

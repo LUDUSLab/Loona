@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 457c7d4e56aa16441b68af6e82496ca6
+timeCreated: 1443376671
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: botao_0
+    21300002: botao_1
+    21300004: botao_2
+    21300006: botao_3
+    21300008: botao_4
+    21300010: botao_5
+    21300012: botao_6
+    21300014: botao_7
+    21300016: botao_8
+    21300018: botao_9
+    21300020: botao_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: botao_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1036
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_1
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1036
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_2
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1041
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 556
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_4
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 556
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_5
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 548
+        width: 427
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_6
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 534
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 426
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_8
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 19
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_9
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 2
+        width: 427
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: botao_10
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 0
+        width: 426
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

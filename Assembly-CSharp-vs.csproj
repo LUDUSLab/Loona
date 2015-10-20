@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{58E0883C-E173-DFF3-042C-984D87C37BF5}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\JellySprites\Demo\Scripts\BlobBehaviour.cs" />
+     <Compile Include="Assets\JellySprites\Demo\Scripts\BlobEyes.cs" />
+     <Compile Include="Assets\JellySprites\Demo\Scripts\JellySpriteDemoManager.cs" />
+     <Compile Include="Assets\JellySprites\Scripts\JellyBridge.cs" />
+     <Compile Include="Assets\JellySprites\Scripts\JellyCameraFollow.cs" />
+     <Compile Include="Assets\JellySprites\Scripts\JellySprite.cs" />
+     <Compile Include="Assets\JellySprites\Scripts\JellySpriteReferencePoint.cs" />
+     <Compile Include="Assets\JellySprites\Scripts\UnityJellySprite.cs" />
+     <Compile Include="Assets\Loona\Scripts\AjustarCamera.cs" />
+     <Compile Include="Assets\Loona\Scripts\AjustarRaioColisor.cs" />
+     <Compile Include="Assets\Loona\Scripts\ButtonController.cs" />
+     <Compile Include="Assets\Loona\Scripts\ChangeCanvasScenes.cs" />
+     <Compile Include="Assets\Loona\Scripts\ColisaoPirulito.cs" />
+     <Compile Include="Assets\Loona\Scripts\ColisorPirulito.cs" />
+     <Compile Include="Assets\Loona\Scripts\ComidaSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\Crescer.cs" />
+     <Compile Include="Assets\Loona\Scripts\Destroy.cs" />
+     <Compile Include="Assets\Loona\Scripts\DestroyOnCollision.cs" />
+     <Compile Include="Assets\Loona\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\Entrada.cs" />
+     <Compile Include="Assets\Loona\Scripts\FimDeJogo.cs" />
+     <Compile Include="Assets\Loona\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\DeathFlag.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\DestroyOnContact.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\ObstaclesMoviment.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\SpawnOnRandomPoints.cs" />
+     <Compile Include="Assets\Loona\Scripts\InimigoSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\MapObjectsSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\MassUpDown.cs" />
+     <Compile Include="Assets\Loona\Scripts\Massa.cs" />
+     <Compile Include="Assets\Loona\Scripts\MassaPerdidaSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\Movimentacao.cs" />
+     <Compile Include="Assets\Loona\Scripts\PinchZoom.cs" />
+     <Compile Include="Assets\Loona\Scripts\ScaleWithPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\Shoot.cs" />
+     <Compile Include="Assets\Loona\Scripts\StatusGosma.cs" />
+     <Compile Include="Assets\Loona\Scripts\Teleport.cs" />
+     <Compile Include="Assets\Loona\Scripts\Tiro.cs" />
+     <Compile Include="Assets\Loona\Scripts\fade3.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\Box.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\Instruction.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\LoseScript.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelLoadingBar.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelLoadingScreen.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelQueryExample.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelTesterController.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelTesterOption.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\MadLevelYouAreHereScript.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\ResetProfileScript.cs" />
+     <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\WinPointsScript.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Attributes.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Background\MadLevelBackgroundLayer.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\IMadLevelProfileBackend.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Layouts\MadLevelAbstractLayout.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Layouts\MadLevelFreeLayout.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Layouts\MadLevelGridBullets.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Layouts\MadLevelGridLayout.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\Layouts\MadLevelLayout.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnim.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnimColor.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnimMove.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnimRotate.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnimScale.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadAnimator.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadFollow.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevel.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelAnimator.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelBackground.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelConfiguration.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelExtension.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelHelp.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelIcon.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelInputControl.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelProfile.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelProfileBufferedBackend.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelProfileWatcher.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelProperty.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelPropertyCondition.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelPropertyText.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelQuery.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelRoot.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelScene.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Base\MadLevelSettings.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadAnchor.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadAnimation.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadAtlas.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadBigMeshRenderer.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadDragStopDraggable.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadDraggable.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadDrawCall.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadDrawing.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadEvent.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadFont.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadFontData.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadFreeDraggable.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadMaterialStore.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadNode.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadObject.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadPanel.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadPlayAudioClip.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadRootNode.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadShaders.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadSprite.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadText.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\Mad2D\MadiTween.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadDebug.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadGameObject.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadHashCode.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadList.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadMath.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadMatrix.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadNaturalSortComparer.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadObjectPool.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadScreen.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTransform.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTrial.cs" />
+     <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadUndo.cs" />
+     <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
+     <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
+     <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
+     <Compile Include="Assets\iTween\iTween.cs" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\Font White.shader" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\Font DB.shader" />
+     <None Include="Assets\Mad Level Manager\Examples\Example 5 - Unity 5\README.txt" />
+     <None Include="Assets\Mad Level Manager\Themes\Theme2\Font\abeezee-glyphs.txt" />
+     <None Include="Assets\Mad Level Manager\Themes\Theme2\Font\abeezee-license.txt" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\Font.shader" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\UnlitTransparentTint.shader" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\UnlitTransparentTintPre.shader" />
+     <None Include="Assets\Mad Level Manager\Examples\Stuff\Fonts\Boogaloo New\SIL OFL Font License Boogaloo.txt" />
+     <None Include="Assets\Mad Level Manager\Examples\Stuff\Fonts\Boogaloo\SIL OFL Font License Boogaloo.txt" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\UnlitTransparentTint DB.shader" />
+     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\UnlitTransparentTintPre DB.shader" />
+     <None Include="Assets\Mad Level Manager\Examples\Stuff\Fonts\Boogaloo New\boogaloo.txt" />
+     <None Include="Assets\Mad Level Manager\Themes\Theme1\Fonts\font.txt" />
+     <None Include="Assets\Mad Level Manager\Scripts\Mad2D\Resources\Shaders\Font White DB.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

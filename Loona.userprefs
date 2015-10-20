@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MassaPerdidaSpawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\DestroyOnCollision.cs">
     <Files>
-      <File FileName="Assets\Scripts\MassaPerdidaSpawn.cs" Line="37" Column="6" />
+      <File FileName="Assets\Loona\Scripts\DestroyOnCollision.cs" Line="24" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using System.Collections;
 
 public class DestroyOnCollision : MonoBehaviour {
 	
@@ -10,6 +12,7 @@ public class DestroyOnCollision : MonoBehaviour {
 	private Transform PlayerTransform;
 	private Vector3 AuxVector3;
 	public float TimeToDestroy,TimeStepUpdate,ScaleAddedToPlayer;
+	private Vector3 ScalePlayer, ScaleThisObject;
 	
 	void Start ()
 	{
@@ -18,13 +21,16 @@ public class DestroyOnCollision : MonoBehaviour {
 		PlayerTransform = player.transform;
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if ((other.gameObject.tag == "Player" && this.gameObject.tag == "Enemy")&& (player.transform.localScale.x > this.transform.localScale.x))
-		{
-			Debug.Log("prestou");
-			Follow();
-			InvokeRepeating("Update2",0, TimeStepUpdate);
-			Invoke("DestroyNow", TimeToDestroy);
-			controller.GetComponent<Crescer>().MassAddUp(player,ScaleAddedToPlayer);
+		ScalePlayer = player.GetComponentInChildren<CircleCollider2D> ().bounds.size;
+		ScaleThisObject = this.gameObject.GetComponent<CircleCollider2D> ().bounds.size;
+		if ((other.gameObject.tag == "Player" && this.gameObject.tag == "Enemy") && (ScalePlayer.x > ScaleThisObject.x)) {
+			Debug.Log ("prestou");
+			Follow ();
+			InvokeRepeating ("Update2", 0, TimeStepUpdate);
+			Invoke ("DestroyNow", TimeToDestroy);
+			controller.GetComponent<Crescer> ().MassAddUp (player, ScaleAddedToPlayer);
+		} else if (ScalePlayer.x < ScaleThisObject.x) {
+			controller.GetComponent<FimDeJogo>().Morrer();
 		}
 		//if (other.gameObject.tag == "Player" && this.gameObject.tag == "EnemySphere")
 		//{
@@ -32,12 +38,15 @@ public class DestroyOnCollision : MonoBehaviour {
 		///InvokeRepeating("Update2", 0, TimeStepUpdate);
 		// Invoke("DestroyNow", TimeToDestroy);
 		// }
-		if((other.gameObject.tag == PlayerTag)&& (player.transform.localScale.x > this.transform.localScale.x))
+		if((other.gameObject.tag == PlayerTag)&& (ScalePlayer.x > ScaleThisObject.x))
 		{
 			Debug.Log("prestou");
 			InvokeRepeating("Update2", 0, TimeStepUpdate);
 			Invoke("DestroyNow", TimeToDestroy);
 			controller.GetComponent<Crescer>().MassAddUp(player,ScaleAddedToPlayer);
+		}else if (ScalePlayer.x < ScaleThisObject.x){
+			
+			controller.GetComponent<FimDeJogo>().Morrer();
 		}
 	}
 	void DestroyNow()

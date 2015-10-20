@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnOnRandomPoints : MonoBehaviour {
     public GameObject ObjectToSpawn;
+    public Sprite[] ObjectSprites;
     public string SpawnPointsTag;
     public int InitialQuantityToSpawn;
     public int ConstantQuantity;
@@ -28,11 +29,15 @@ public class SpawnOnRandomPoints : MonoBehaviour {
     void Spawn()
     {
         GameObject InstatiatedObject;
+        //Random Sprite
+        int RandomSpriteNumber= (int)Random.Range(0, ObjectSprites.Length);
+        //
         int RandomNumber = (int)Random.Range(0, SpawnPoints.Length);
         Vector2 PositionToSpawn = SpawnPoints[RandomNumber].transform.position;
         Quaternion rotation = new Quaternion();
         rotation.eulerAngles= new Vector3(0, 0, Random.Range(0,360));
         InstatiatedObject = Instantiate(ObjectToSpawn);
+        InstatiatedObject.GetComponent<SpriteRenderer>().sprite = ObjectSprites[RandomSpriteNumber];
         InstatiatedObject.transform.position = PositionToSpawn;
         InstatiatedObject.transform.rotation = rotation;
         InstatiatedObject.transform.parent = ObjectParent.transform;

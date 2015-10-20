@@ -16,7 +16,7 @@ public class Teleport : MonoBehaviour {
         CentralPointTag = TeleportController.GetComponent<TeleportController>().CentralPointTag;
         CoolDown = TeleportController.GetComponent<TeleportController>().Cooldown;
         Teleporters = GameObject.FindGameObjectsWithTag(TeleportTag);
-        Invoke("GetReferentialPoints", CoolDown);
+        Invoke("GetReferentialPoints", 1f);
     }
 	
 	// Update is called once per frame

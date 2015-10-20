@@ -7,6 +7,8 @@ public class ButtonController : MonoBehaviour {
 	public Sprite ButtonON, ButtonOFF;
 	public int Speed;
 	public GameObject ButtonToChange;
+    public float DelayTimeToLoad;
+    public string GameSceneName;
 	private bool Active;
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,14 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 	public void LoadScene(string Scene){
-		Application.LoadLevel (Scene);
+		 Application.LoadLevel (Scene);
 	}
+    public void LoadGame()
+    {
+        Application.LoadLevel(GameSceneName);
+    }
+    public void LoadGameByTime()
+    {
+        Invoke("LoadGame", DelayTimeToLoad);
+    }
 }

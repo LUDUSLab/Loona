@@ -2,18 +2,21 @@
 using System.Collections;
 
 public class Teleport : MonoBehaviour {
-    public string PlayerTag, TeleportTag,ReferencePointTag,CentralPointTag;
+    public GameObject TeleportController;
+    private string PlayerTag, TeleportTag,ReferencePointTag,CentralPointTag;
     private Vector2 PlayerCurrentPosition, PlayerNextPosition;
     private GameObject[] Teleporters,ReferencePoints;
     private GameObject CentralPoint;
     private int RandomNumber;
-    public Vector2 Teste;
-    public GameObject Player;
-    public float CoolDown;
+    private float CoolDown;
     // Use this for initialization
     void Start () {
+        PlayerTag = TeleportController.GetComponent<TeleportController>().PlayerTag;
+        TeleportTag = TeleportController.GetComponent<TeleportController>().TeleportTag;
+        CentralPointTag = TeleportController.GetComponent<TeleportController>().CentralPointTag;
+        CoolDown = TeleportController.GetComponent<TeleportController>().Cooldown;
         Teleporters = GameObject.FindGameObjectsWithTag(TeleportTag);
-        
+        Invoke("GetReferentialPoints", CoolDown);
     }
 	
 	// Update is called once per frame
@@ -23,20 +26,17 @@ public class Teleport : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D cool){
         if (cool.tag == PlayerTag)
         {
+            DesactivateCollider();
             RandomNumber = (int)Random.Range(0, Teleporters.Length);
-            ReferencePoints = GameObject.FindGameObjectsWithTag(ReferencePointTag);
-            CentralPoint = GameObject.FindGameObjectWithTag(CentralPointTag);
-            PlayerNextPosition = Teleporters[RandomNumber].transform.position;
             DesactivateDestinationTeleport(Teleporters[RandomNumber]);
-            StartCoroutine(ActivateDestinationTeleport(Teleporters[RandomNumber]));
+            PlayerNextPosition = Teleporters[RandomNumber].transform.position;
             CentralPoint.transform.position = PlayerNextPosition;
             for (int i = 0; i < ReferencePoints.Length; i++)
             {
                 ReferencePoints[i].transform.position = PlayerNextPosition;
-            }
-            DesactivateCollider();
+            } 
             Invoke("ActivateCollider", CoolDown);
-            
+            Invoke("ActivateDestinationTeleport", CoolDown);
         }
     }
     void DesactivateCollider()
@@ -51,9 +51,13 @@ public class Teleport : MonoBehaviour {
     {
         Teleporter.GetComponent<Collider2D>().enabled = false;
     }
-    IEnumerator ActivateDestinationTeleport(GameObject Teleporter)
+    void ActivateDestinationTeleport()
     {
-        Teleporter.GetComponent<Collider2D>().enabled = true;
-        yield return new WaitForSeconds(CoolDown);
+        Teleporters[RandomNumber].GetComponent<Collider2D>().enabled = true;
+    }
+    void GetReferentialPoints()
+    {
+        ReferencePoints = GameObject.FindGameObjectsWithTag(PlayerTag);
+        CentralPoint = GameObject.FindGameObjectWithTag(CentralPointTag);
     }
 }

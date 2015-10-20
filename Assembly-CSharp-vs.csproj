@@ -72,6 +72,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\DestroyOnContact.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\ObstaclesMoviment.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\SpawnOnRandomPoints.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SecundaryInteractions\TeleportController.cs" />
      <Compile Include="Assets\Loona\Scripts\InimigoSpawn.cs" />
      <Compile Include="Assets\Loona\Scripts\MapObjectsSpawn.cs" />
      <Compile Include="Assets\Loona\Scripts\MassUpDown.cs" />

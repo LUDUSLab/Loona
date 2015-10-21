@@ -51,6 +51,10 @@ public class DestroyOnCollision : MonoBehaviour {
 	}
 	void DestroyNow()
 	{
+        if(gameObject.tag == "ComidaGordurosa")
+        {
+            controller.GetComponent<MapObjectsSpawn>().InstantiateMapObjects(1, this.gameObject);
+        }
 		Destroy(gameObject);
 	}
 	void Follow()

@@ -10,9 +10,11 @@ public class ButtonController : MonoBehaviour {
     public float DelayTimeToLoad;
     public string GameSceneName;
 	private bool Active;
+	private Animator Animation;
 	// Use this for initialization
 	void Start () {
 		Active = false;
+		Animation = GameObject.Find ("Pivo").GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -48,4 +50,17 @@ public class ButtonController : MonoBehaviour {
     {
         Invoke("LoadGame", DelayTimeToLoad);
     }
-}
+	public void Pause(string pause)
+	{
+		Time.timeScale = 0;
+		Animation.SetTrigger (pause);
+
+	}
+	public void Play(string play)
+	{
+		Time.timeScale = 1;
+		Animation.SetTrigger (play);
+		
+	}
+	
+	}

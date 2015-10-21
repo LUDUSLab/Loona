@@ -45,6 +45,7 @@ public class Entrada : MonoBehaviour {
 					Controller.GetComponent<FimDeJogo>().Morrer();
 				}
 				player.transform.localScale -= new Vector3(movimentPorcentReduction,movimentPorcentReduction,1);
+				Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction/2;
 
 
 

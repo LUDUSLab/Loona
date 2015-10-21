@@ -1,9 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\ButtonController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\Entrada.cs">
     <Files>
-      <File FileName="Assets\Loona\Scripts\ButtonController.cs" Line="62" Column="29" />
+      <File FileName="Assets\Loona\Scripts\Crescer.cs" Line="46" Column="2" />
+      <File FileName="Assets\Loona\Scripts\ButtonController.cs" Line="1" Column="1" />
       <File FileName="Assets\Loona\Scripts\FimDeJogo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Loona\Scripts\Entrada.cs" Line="103" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

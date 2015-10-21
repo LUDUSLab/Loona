@@ -24,7 +24,7 @@ public class Crescer : MonoBehaviour {
 		if(Player.transform.localScale.x < MaxSize)
 		{
 			iTween.ScaleAdd(Player,new Vector3 (ScaleAdd,ScaleAdd,1),1f);
-			//Camera.main.orthographicSize = Camera.main.orthographicSize + ScaleAdd/2;
+			Camera.main.orthographicSize = Camera.main.orthographicSize + ScaleAdd/2;
 		}
 		if(Player.gameObject.transform.localScale.x <= 0.2)
 		{

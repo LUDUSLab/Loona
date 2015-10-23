@@ -17,8 +17,8 @@ public class Movimentacao : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Invoke("GetRefPoints", 0.1f);
         gosma = GameObject.FindGameObjectWithTag(PlayerTag);
-        RefPoints = GameObject.FindGameObjectWithTag(ReferencePointsTag);
 		LostMass = GameObject.FindGameObjectWithTag (LostMassTag);
 		//GameController = GameObject.FindGameObjectWithTag (Controller);
     }
@@ -42,5 +42,9 @@ public class Movimentacao : MonoBehaviour {
 		}*/
         //RefPoints.GetComponentInChildren<Rigidbody2D>().AddForce(direcao, ForceMode2D.Impulse);
         //gosma.GetComponent<UnityJellySprite>().AddForce(direcao);
+    }
+    void GetRefPoints()
+    {
+        RefPoints = GameObject.FindGameObjectWithTag(ReferencePointsTag);
     }
 }

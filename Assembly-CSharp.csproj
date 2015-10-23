@@ -78,6 +78,7 @@
      <Compile Include="Assets\Loona\Scripts\MassUpDown.cs" />
      <Compile Include="Assets\Loona\Scripts\Massa.cs" />
      <Compile Include="Assets\Loona\Scripts\MassaPerdidaSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\Loading.cs" />
      <Compile Include="Assets\Loona\Scripts\Movimentacao.cs" />
      <Compile Include="Assets\Loona\Scripts\PinchZoom.cs" />
      <Compile Include="Assets\Loona\Scripts\ScaleWithPlayer.cs" />
@@ -164,6 +165,7 @@
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTransform.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTrial.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadUndo.cs" />
+     <Compile Include="Assets\Shotter.cs" />
      <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
      <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />

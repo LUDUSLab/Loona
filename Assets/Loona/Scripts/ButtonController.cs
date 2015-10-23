@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour {
 	public GameObject ButtonToChange;
     public float DelayTimeToLoad;
     public string GameSceneName;
+    public string LoadingSceneName;
 	private bool Active;
 	private Animator Animation;
 	// Use this for initialization
@@ -40,7 +41,8 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 	public void LoadScene(string Scene){
-		 Application.LoadLevel (Scene);
+ 
+            Application.LoadLevel (Scene);
 	}
     public void LoadGame()
     {
@@ -62,5 +64,15 @@ public class ButtonController : MonoBehaviour {
 		Animation.SetTrigger (play);
 		
 	}
-	
-	}
+	public void Restart()
+    {
+        Time.timeScale = 1;
+        Application.LoadLevel(LoadingSceneName);
+    }
+    public void SetTriggerAnimator(string triggertoset)
+    {
+        Animation.SetTrigger(triggertoset);
+    }
+
+
+}

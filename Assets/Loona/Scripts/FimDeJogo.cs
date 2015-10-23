@@ -16,6 +16,7 @@ public class FimDeJogo : MonoBehaviour {
 
     public void Morrer()
     {
+        GetComponent<ButtonController>().SetTriggerAnimator("GameOver");
         Time.timeScale = 0;
         Debug.Log("Derrotado");
     }

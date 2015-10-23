@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2c49227f3bb07e041b3efca4a78f0f9c
-timeCreated: 1445532747
+timeCreated: 1445445952
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -39,7 +39,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 2
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -47,6 +47,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -56,11 +57,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Android
-    maxTextureSize: 1024
-    textureFormat: -3
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites:
     - name: Pause_Pop_UP_0
@@ -71,7 +68,7 @@ TextureImporter:
         width: 367
         height: 367
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_1
       rect:
@@ -81,7 +78,7 @@ TextureImporter:
         width: 308
         height: 319
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_2
       rect:
@@ -101,7 +98,7 @@ TextureImporter:
         width: 307
         height: 315
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_4
       rect:
@@ -111,7 +108,7 @@ TextureImporter:
         width: 186
         height: 179
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_5
       rect:
@@ -121,7 +118,7 @@ TextureImporter:
         width: 185
         height: 179
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_6
       rect:
@@ -131,7 +128,7 @@ TextureImporter:
         width: 181
         height: 175
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_7
       rect:
@@ -141,7 +138,7 @@ TextureImporter:
         width: 181
         height: 175
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_8
       rect:
@@ -151,7 +148,7 @@ TextureImporter:
         width: 448
         height: 128
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Pause_Pop_UP_9
       rect:
@@ -161,7 +158,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

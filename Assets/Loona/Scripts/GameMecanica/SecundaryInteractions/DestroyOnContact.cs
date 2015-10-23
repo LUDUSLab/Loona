@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class DestroyOnContact : MonoBehaviour {
-
+    public bool Idie, Udie;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +14,13 @@ public class DestroyOnContact : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if (Idie)
+        {
+            Destroy(other.gameObject);
+        }
+        if (Udie)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -24,7 +24,7 @@ public class DestroyOnCollision : MonoBehaviour {
 		ScalePlayer = player.GetComponentInChildren<CircleCollider2D> ().bounds.size;
 		ScaleThisObject = this.gameObject.GetComponent<CircleCollider2D> ().bounds.size;
 		if ((other.gameObject.tag == "Player" && this.gameObject.tag == "Enemy") && (ScalePlayer.x > ScaleThisObject.x)) {
-			Debug.Log ("prestou");
+			Debug.Log ("prestou34132");
 			Follow ();
 			InvokeRepeating ("Update2", 0, TimeStepUpdate);
 			Invoke ("DestroyNow", TimeToDestroy);
@@ -40,7 +40,6 @@ public class DestroyOnCollision : MonoBehaviour {
 		// }
 		if((other.gameObject.tag == PlayerTag)&& (ScalePlayer.x > ScaleThisObject.x))
 		{
-			Debug.Log("prestou");
 			InvokeRepeating("Update2", 0, TimeStepUpdate);
 			Invoke("DestroyNow", TimeToDestroy);
 			controller.GetComponent<Crescer>().MassAddUp(player,ScaleAddedToPlayer);

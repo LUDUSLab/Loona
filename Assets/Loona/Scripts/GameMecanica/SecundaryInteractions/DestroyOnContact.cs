@@ -16,11 +16,11 @@ public class DestroyOnContact : MonoBehaviour {
     {
         if (Idie)
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
         if (Udie)
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

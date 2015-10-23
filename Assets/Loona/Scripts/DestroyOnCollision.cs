@@ -7,42 +7,35 @@ public class DestroyOnCollision : MonoBehaviour {
 	
 	public string PlayerTag;
 	public float RotantionSpeed, MoveSpeed;
+    public string PlayerColliderTag = "ColisorPlayer", ControllerTag = "GameController", EnemyTag = "Enemy";
 	private GameObject controller;
-	private GameObject player;
+	private GameObject PlayerCollider;
 	private Transform PlayerTransform;
-	private Vector3 AuxVector3;
+	private Vector3 AuxVector3, ScalePlayer, ScaleThisObject;
 	public float TimeToDestroy,TimeStepUpdate,ScaleAddedToPlayer;
-	private Vector3 ScalePlayer, ScaleThisObject;
 	
 	void Start ()
 	{
-		controller = GameObject.FindGameObjectWithTag("GameController");
-		player = GameObject.FindGameObjectWithTag("Player");
-		PlayerTransform = player.transform;
+		controller = GameObject.FindGameObjectWithTag(ControllerTag);
+		PlayerCollider = GameObject.FindGameObjectWithTag(PlayerColliderTag);
+		PlayerTransform = PlayerCollider.transform;
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		ScalePlayer = player.GetComponentInChildren<CircleCollider2D> ().bounds.size;
+		ScalePlayer = PlayerCollider.GetComponent<CircleCollider2D> ().bounds.size;
 		ScaleThisObject = this.gameObject.GetComponent<CircleCollider2D> ().bounds.size;
-		if ((other.gameObject.tag == "Player" && this.gameObject.tag == "Enemy") && (ScalePlayer.x > ScaleThisObject.x)) {
-			Debug.Log ("prestou34132");
+		if ((other.gameObject.tag == PlayerColliderTag && this.gameObject.tag == EnemyTag) && (ScalePlayer.x > ScaleThisObject.x)) {
 			Follow ();
 			InvokeRepeating ("Update2", 0, TimeStepUpdate);
 			Invoke ("DestroyNow", TimeToDestroy);
-			controller.GetComponent<Crescer> ().MassAddUp (player, ScaleAddedToPlayer);
+			controller.GetComponent<Crescer> ().MassAddUp (PlayerCollider, ScaleAddedToPlayer);
 		} else if (ScalePlayer.x < ScaleThisObject.x) {
 			controller.GetComponent<FimDeJogo>().Morrer();
 		}
-		//if (other.gameObject.tag == "Player" && this.gameObject.tag == "EnemySphere")
-		//{
-		//controller.GetComponent<Crescer>().MassAddUp(player,);
-		///InvokeRepeating("Update2", 0, TimeStepUpdate);
-		// Invoke("DestroyNow", TimeToDestroy);
-		// }
 		if((other.gameObject.tag == PlayerTag)&& (ScalePlayer.x > ScaleThisObject.x))
 		{
 			InvokeRepeating("Update2", 0, TimeStepUpdate);
 			Invoke("DestroyNow", TimeToDestroy);
-			controller.GetComponent<Crescer>().MassAddUp(player,ScaleAddedToPlayer);
+			controller.GetComponent<Crescer>().MassAddUp(PlayerCollider,ScaleAddedToPlayer);
 		}else if (ScalePlayer.x < ScaleThisObject.x){
 			
 			controller.GetComponent<FimDeJogo>().Morrer();

@@ -6,11 +6,13 @@ public class Shotter : MonoBehaviour
     private GameObject controller;
     public float TimeToDestroy, ScaleAddedToPlayer;
     private GameObject player;
+    private GameObject PlayerExpressions;
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         controller = GameObject.FindGameObjectWithTag("GameController");
+        player= GameObject.FindGameObjectWithTag("Player");
+        PlayerExpressions = GameObject.FindGameObjectWithTag("PlayerExpressions");
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Shotter : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             controller.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
+            PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
             Destroy(gameObject);
         }
     }

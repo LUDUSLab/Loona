@@ -8,6 +8,7 @@ public class Entrada : MonoBehaviour {
     private Vector3 mousePos;
 	private bool flag = true;
     public float TouchTime = 0.5f;
+    [SerializeField] private float TouchTimeDelayMax = 0.1f;
 	[SerializeField] private GameObject Controller;
     [SerializeField] private string GameControllerTag = "GameController";
     private GameObject player;
@@ -33,30 +34,39 @@ public class Entrada : MonoBehaviour {
             mousePos = Input.mousePosition;
             if (ButtonWasClicked(mousePos, PauseButton.gameObject.transform.position, PauseButtonRange))
             {
-                return;       
+                return;
             }
-			if (flag)
-			{
-				flag = false;
-
-				if(player.gameObject.transform.localScale.x <= 0.2)
-				{
-					Controller.GetComponent<FimDeJogo>().Morrer();
-				}
-				player.transform.localScale -= new Vector3(movimentPorcentReduction,movimentPorcentReduction,1);
-				Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction/2;
-
-				horizontal = mousePos.x - (int) Screen.width / 2;
-				vertical = mousePos.y - (int) Screen.height / 2;
-				
-				GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
-
-				GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
-                
-                Invoke("SetFlag", TouchTime);
-			}
+            Invoke("CheckPinch", TouchTimeDelayMax);
+			
 		}
 	}
+
+    private void CheckPinch()
+    {
+        if (Input.touchCount == 2)
+        {
+            return;
+        }
+        if (flag)
+        {
+            flag = false;
+            if (player.gameObject.transform.localScale.x <= 0.2)
+            {
+                Controller.GetComponent<FimDeJogo>().Morrer();
+            }
+            player.transform.localScale -= new Vector3(movimentPorcentReduction, movimentPorcentReduction, 1);
+            Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction / 2;
+
+            horizontal = mousePos.x - (int)Screen.width / 2;
+            vertical = mousePos.y - (int)Screen.height / 2;
+
+            GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
+
+            GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
+
+            Invoke("SetFlag", TouchTime);
+        }
+    }
 
     private bool ButtonWasClicked(Vector3 TouchPosition, Vector3 ButtonPosition, float ButtonSize)
     {

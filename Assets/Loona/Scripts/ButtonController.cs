@@ -67,12 +67,21 @@ public class ButtonController : MonoBehaviour {
 	public void Restart()
     {
         Time.timeScale = 1;
-        Application.LoadLevel(LoadingSceneName);
+        Application.LoadLevel(Application.loadedLevel);
     }
     public void SetTriggerAnimator(string triggertoset)
     {
         Animation.SetTrigger(triggertoset);
     }
 
-
+    public void PlayOnStart(GameObject PopUpToDestroy)
+    {
+        Time.timeScale = 1;
+        Destroy(PopUpToDestroy);
+        Invoke("PlayInTime",0.2f);
+    }
+    void PlayInTime()
+    {
+        Time.timeScale = 1;
+    }
 }

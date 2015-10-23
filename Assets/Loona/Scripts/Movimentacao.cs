@@ -17,7 +17,7 @@ public class Movimentacao : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Invoke("GetRefPoints", 0.1f);
+        Invoke("GetRefPoints", 0.02f);
         gosma = GameObject.FindGameObjectWithTag(PlayerTag);
 		LostMass = GameObject.FindGameObjectWithTag (LostMassTag);
 		//GameController = GameObject.FindGameObjectWithTag (Controller);

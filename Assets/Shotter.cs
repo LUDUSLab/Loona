@@ -5,6 +5,7 @@ public class Shotter : MonoBehaviour
 {
     private GameObject controller;
     public float TimeToDestroy, ScaleAddedToPlayer;
+    public bool HurtAnimation;
     private GameObject player;
     private GameObject PlayerExpressions;
     // Use this for initialization
@@ -25,7 +26,10 @@ public class Shotter : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             controller.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
-            PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
+            if (HurtAnimation)
+            {
+                PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
+            }
             Destroy(gameObject);
         }
     }

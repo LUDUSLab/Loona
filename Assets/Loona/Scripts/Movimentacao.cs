@@ -5,7 +5,7 @@ using System.Collections;
 public class Movimentacao : MonoBehaviour {
 
     private Vector2 direcao;
-    [SerializeField] private int ForcaImpulso;
+    [SerializeField] private int ForcaImpulso = 200;
     private GameObject gosma;
     private GameObject RefPoints;
 	private GameObject LostMass;
@@ -31,7 +31,7 @@ public class Movimentacao : MonoBehaviour {
         for(int i = 0; i < RefPoints.transform.childCount; i++)
         {
 			//GameController.GetComponent<Crescer>().MassAddUp(gosma,movimentPorcentReduction);
-			RefPoints.transform.GetChild(i).GetComponent<Rigidbody2D>().AddForce(direcao, ForceMode2D.Impulse);
+			RefPoints.transform.GetChild(i).GetComponent<Rigidbody2D>().AddForce(direcao, mode);
 
 
         }

@@ -49,7 +49,7 @@ public class Entrada : MonoBehaviour {
 				horizontal = mousePos.x - (int) Screen.width / 2;
 				vertical = mousePos.y - (int) Screen.height / 2;
 				
-				GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Impulse);
+				GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
 
 				GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
                 

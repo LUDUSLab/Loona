@@ -24,7 +24,7 @@ public class MapObjectsSpawn : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            Object = Instantiate(ObjectPrefabParam);
+            Object = Instantiate(ObjectPrefab);
 
             vector3.x = (int)Random.Range(-HorizontalMaxCoordinate, HorizontalMaxCoordinate);
             while (vector3.x == 0)

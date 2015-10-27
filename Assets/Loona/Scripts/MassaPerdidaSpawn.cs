@@ -14,7 +14,6 @@ public class MassaPerdidaSpawn : MonoBehaviour {
     [SerializeField] private int ForcaImpulso;
 
     private float i;
-
 	// Use this for initialization
 	void Start () {
         //massaPerdida = GameObject.FindGameObjectWithTag("MassaPerdida");

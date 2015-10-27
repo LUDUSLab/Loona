@@ -15,8 +15,8 @@ public class ScoreManager : MonoBehaviour {
         HighScorer = GameObject.FindGameObjectWithTag(HighScoreTAG);
         getPlayerPrefs();
         Score.GetComponent<Text>().text = "Score: " + Scorer;
-        ScoreGameOverr.GetComponent<Text>().text = " " + Scorer;
-        HighScorer.GetComponent<Text>().text = " " + HighScore;
+        ScoreGameOverr.GetComponent<Text>().text = "Score: " + Scorer;
+        HighScorer.GetComponent<Text>().text = "Highest Score: " + HighScore;
     }
 
     // Update is called once per frame
@@ -25,13 +25,14 @@ public class ScoreManager : MonoBehaviour {
         Scorer = Scorer + ScoreToAdd;
         Score.GetComponent<Text>().text = "Score: " + Scorer;
         ScoreGameOverr.GetComponent<Text>().text = " " + Scorer;
-        HighScorer.GetComponent<Text>().text = " " + HighScore;
         if (Scorer >= HighScore)
         {
             HighScore = Scorer;
             setPlayerPrefs(Scorer);
             PlayerPrefs.Save();
         }
+        HighScorer.GetComponent<Text>().text = " " + HighScore;
+
     }
     public int GetScore()
     {

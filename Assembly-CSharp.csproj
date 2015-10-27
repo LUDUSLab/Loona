@@ -72,6 +72,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\ObstaclesMoviment.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\SpawnOnRandomPoints.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportController.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportDrag.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\DeathFlag.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FollowObject.cs" />

@@ -27,7 +27,10 @@ public class Teleport : MonoBehaviour {
         if (cool.tag == PlayerTag)
         {
             DesactivateCollider();
-            RandomNumber = (int)Random.Range(0, Teleporters.Length);
+            do
+            {
+                RandomNumber = (int)Random.Range(0, Teleporters.Length);
+            } while (Teleporters[RandomNumber].name == gameObject.name);
             DesactivateDestinationTeleport(Teleporters[RandomNumber]);
             PlayerNextPosition = Teleporters[RandomNumber].transform.position;
             CentralPoint.transform.position = PlayerNextPosition;
@@ -50,10 +53,12 @@ public class Teleport : MonoBehaviour {
     void DesactivateDestinationTeleport(GameObject Teleporter)
     {
         Teleporter.GetComponent<Collider2D>().enabled = false;
+        Teleporter.transform.GetComponentInChildren<CircleCollider2D>().enabled = false;
     }
     void ActivateDestinationTeleport()
     {
         Teleporters[RandomNumber].GetComponent<Collider2D>().enabled = true;
+        Teleporters[RandomNumber].transform.GetComponentInChildren<CircleCollider2D>().enabled = true;
     }
     void GetReferentialPoints()
     {

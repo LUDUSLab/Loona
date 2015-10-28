@@ -86,6 +86,7 @@
      <Compile Include="Assets\Loona\Scripts\Movimentacao.cs" />
      <Compile Include="Assets\Loona\Scripts\PinchZoom.cs" />
      <Compile Include="Assets\Loona\Scripts\ScaleWithPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\ScaryToObjectDirection.cs" />
      <Compile Include="Assets\Loona\Scripts\Shoot.cs" />
      <Compile Include="Assets\Loona\Scripts\StatusGosma.cs" />
      <Compile Include="Assets\Loona\Scripts\Teleport.cs" />

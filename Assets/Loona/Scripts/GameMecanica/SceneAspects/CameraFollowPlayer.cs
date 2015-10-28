@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraFollowPlayer : MonoBehaviour {
     public float Velocity, minDistance, followDistance, TimeStepUpdate;
-    public GameObject target;
+    private GameObject target;
     public Vector3 offset;
     public float MaxX,MinX, MaxY,MinY;
     private GameObject MainCamera;
@@ -13,6 +13,7 @@ public class CameraFollowPlayer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
         targetPos = transform.position;
         MainCamera = Camera.main.gameObject;
         InvokeRepeating("Follow", 0, TimeStepUpdate);

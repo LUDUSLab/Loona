@@ -7,10 +7,11 @@ public class FimDeJogo : MonoBehaviour {
     public GameObject PlayerParticleDeathPrefab;
     public GameObject PlayerObject;
     public float DelayTimeGameOverPopUp = 0.5f;
-
+    [SerializeField]
+    private string TagPlayer;
 	// Use this for initialization
 	void Start () {
-	
+        PlayerObject = GameObject.FindGameObjectWithTag(TagPlayer);
 	}
 	
 	// Update is called once per frame

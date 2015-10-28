@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Entrada : MonoBehaviour {
+public class TouchController : MonoBehaviour {
 
     private float vertical;
     private float horizontal;
@@ -9,8 +9,8 @@ public class Entrada : MonoBehaviour {
 	private bool flag = true;
     public float TouchTime = 0.5f;
     [SerializeField] private float TouchTimeDelayMax = 0.1f;
-	[SerializeField] private GameObject Controller;
-    [SerializeField] private string GameControllerTag = "GameController";
+	private GameObject SceneAspectsController;
+    public string SceneAspectsControllerTag = "SceneAspectsController";
     private GameObject player;
     [SerializeField] private string PlayerTag = "Player";
     public float movimentPorcentReduction = 0.1f;
@@ -20,7 +20,7 @@ public class Entrada : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		Controller = GameObject.FindGameObjectWithTag (GameControllerTag);
+        SceneAspectsController = GameObject.FindGameObjectWithTag(SceneAspectsControllerTag);
 		player = GameObject.FindGameObjectWithTag (PlayerTag);
 		InvokeRepeating ("Update2", 0, 0.001f);
         PauseButton = GameObject.FindGameObjectWithTag(PauseButtonTag);
@@ -52,7 +52,7 @@ public class Entrada : MonoBehaviour {
             flag = false;
             if (player.gameObject.transform.localScale.x <= 0.2)
             {
-                Controller.GetComponent<FimDeJogo>().Morrer();
+                SceneAspectsController.GetComponent<FimDeJogo>().Morrer();
             }
             player.transform.localScale -= new Vector3(movimentPorcentReduction, movimentPorcentReduction, 1);
             Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction / 2;

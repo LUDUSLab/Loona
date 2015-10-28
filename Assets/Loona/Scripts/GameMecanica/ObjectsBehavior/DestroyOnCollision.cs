@@ -8,16 +8,24 @@ public class DestroyOnCollision : MonoBehaviour {
 	public string PlayerTag;
 	public float RotantionSpeed, MoveSpeed;
     public string PlayerColliderTag = "ColisorPlayer", ControllerTag = "GameController", EnemyTag = "Enemy";
-	private GameObject controller;
-	private GameObject PlayerCollider,PlayerScaler;
+    public string PlayerControllerTag = "PlayerController";
+    public string SceneAspectsControllerTag = "SceneAspectsController";
+    private GameObject PlayerController;
+    private GameObject SceneAspectsController;
+    private GameObject controller;
+    private GameObject BGController;
+    public string BGControllerTag = "BGController";
+    private GameObject PlayerCollider,PlayerScaler;
 	private Transform PlayerTransform;
 	private Vector3 AuxVector3, ScalePlayer, ScaleThisObject;
 	public float TimeToDestroy,TimeStepUpdate,ScaleAddedToPlayer;
 	
 	void Start ()
 	{
-		controller = GameObject.FindGameObjectWithTag(ControllerTag);
-		PlayerCollider = GameObject.FindGameObjectWithTag(PlayerColliderTag);
+        PlayerController = GameObject.FindGameObjectWithTag(PlayerControllerTag);
+        BGController = GameObject.FindGameObjectWithTag(BGControllerTag);
+        SceneAspectsController = GameObject.FindGameObjectWithTag(SceneAspectsControllerTag);
+        PlayerCollider = GameObject.FindGameObjectWithTag(PlayerColliderTag);
 		PlayerTransform = PlayerCollider.transform;
         PlayerScaler = GameObject.FindGameObjectWithTag("Player");
     }
@@ -28,7 +36,7 @@ public class DestroyOnCollision : MonoBehaviour {
 			Follow ();
 			InvokeRepeating ("Update2", 0, TimeStepUpdate);
 			Invoke ("DestroyNow", TimeToDestroy);
-			controller.GetComponent<Crescer> ().MassAddUp (PlayerScaler, ScaleAddedToPlayer);
+            PlayerController.GetComponent<Crescer> ().MassAddUp (PlayerScaler, ScaleAddedToPlayer);
 		} else if (ScalePlayer.x < ScaleThisObject.x) {
 			controller.GetComponent<FimDeJogo>().Morrer();
 		}
@@ -36,17 +44,17 @@ public class DestroyOnCollision : MonoBehaviour {
 		{
 			InvokeRepeating("Update2", 0, TimeStepUpdate);
 			Invoke("DestroyNow", TimeToDestroy);
-			controller.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
+            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
 		}else if (ScalePlayer.x < ScaleThisObject.x){
-			
-			controller.GetComponent<FimDeJogo>().Morrer();
+
+            SceneAspectsController.GetComponent<FimDeJogo>().Morrer();
 		}
 	}
 	void DestroyNow()
 	{
         if(gameObject.tag == "ComidaGordurosa")
         {
-            controller.GetComponent<MapObjectsSpawn>().InstantiateMapObjects(1, this.gameObject);
+            BGController.GetComponent<MapObjectsSpawn>().InstantiateMapObjects(1, this.gameObject);
         }
 		Destroy(gameObject);
 	}

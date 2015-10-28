@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Shotter : MonoBehaviour
 {
-    private GameObject controller;
+    private GameObject PlayerController;
+    public string PlayerControllerTag = "PlayerController";
     public float TimeToDestroy, ScaleAddedToPlayer;
     public bool HurtAnimation;
     private GameObject player;
@@ -11,7 +12,7 @@ public class Shotter : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("GameController");
+        PlayerController = GameObject.FindGameObjectWithTag(PlayerControllerTag);
         player= GameObject.FindGameObjectWithTag("Player");
         PlayerExpressions = GameObject.FindGameObjectWithTag("PlayerExpressions");
     }
@@ -25,7 +26,7 @@ public class Shotter : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            controller.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
+            PlayerController.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
             if (HurtAnimation)
             {
                 PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");

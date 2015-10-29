@@ -2,14 +2,17 @@
 using System.Collections;
 
 public class ColisorPirulito : MonoBehaviour {
-
-	[SerializeField] private GameObject player;
-	[SerializeField] private float minimunScaleLoona = 3;
+    public float TimeStepUpdate, MoveSpeed, RotantionSpeed;
+    public AnimationClip VictoryAnimation;
+    [SerializeField] private Animator AnimatorTarget;
     private GameObject controller;
-	// Use this for initialization
-	void Start () {
-		// Modified By JMG
-		player = GameObject.FindGameObjectWithTag ("Player");
+    private Transform PlayerTransform;
+    private Vector3 ScalePlayer;
+    // Use this for initialization
+    void Start () {
+        // Modified By JMG
+        PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
+        AnimatorTarget = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
         controller = GameObject.Find("Pivo");
 	}
 	
@@ -19,16 +22,35 @@ public class ColisorPirulito : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log ("colidiu com pirulito");
-		//Modified By JMG 
-
-		if (other.gameObject.tag == "Player" && player.transform.localScale.x >= minimunScaleLoona)
+		if (other.gameObject.tag == "Player")
 		{
-            
-            Debug.Log("Missao concluida");
-            controller.GetComponent<Animator>().SetTrigger("Victory");
-            Time.timeScale = 0;
-
+            AnimatorTarget.SetTrigger("Collision");
         }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "ColisorPlayer")
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            Time.timeScale = 0.5f;
+            AnimatorTarget.SetTrigger("Eat");
+            Invoke("CallVictory", VictoryAnimation.length);
+            InvokeRepeating("Follow", 0, TimeStepUpdate);
+            //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
+        }
+    }
+     void CallVictory(){
+        Time.timeScale = 0;
+        controller.GetComponent<Animator>().SetTrigger("Victory");
+        }
+    void Follow()
+    {
+        Vector3 AuxVector3;
+        /* Look at Player*/
+        AuxVector3 = new Vector3((PlayerTransform.position.x - transform.position.x), (PlayerTransform.position.y - transform.position.y), (PlayerTransform.position.z - transform.position.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(AuxVector3), RotantionSpeed * Time.deltaTime);
+
+        /* Move at Player*/
+        transform.position += (transform.forward) * MoveSpeed * Time.deltaTime;
     }
 }

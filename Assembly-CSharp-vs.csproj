@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -54,49 +54,42 @@
      <Compile Include="Assets\JellySprites\Scripts\JellySprite.cs" />
      <Compile Include="Assets\JellySprites\Scripts\JellySpriteReferencePoint.cs" />
      <Compile Include="Assets\JellySprites\Scripts\UnityJellySprite.cs" />
-     <Compile Include="Assets\Loona\Scripts\AjustarCamera.cs" />
-     <Compile Include="Assets\Loona\Scripts\AjustarRaioColisor.cs" />
-     <Compile Include="Assets\Loona\Scripts\ButtonController.cs" />
-     <Compile Include="Assets\Loona\Scripts\ChangeCanvasScenes.cs" />
-     <Compile Include="Assets\Loona\Scripts\CharacterSelection.cs" />
-     <Compile Include="Assets\Loona\Scripts\ColisaoPirulito.cs" />
-     <Compile Include="Assets\Loona\Scripts\ColisorPirulito.cs" />
-     <Compile Include="Assets\Loona\Scripts\ComidaSpawn.cs" />
-     <Compile Include="Assets\Loona\Scripts\Crescer.cs" />
-     <Compile Include="Assets\Loona\Scripts\Destroy.cs" />
-     <Compile Include="Assets\Loona\Scripts\DestroyOnCollision.cs" />
-     <Compile Include="Assets\Loona\Scripts\EnemySpawn.cs" />
-     <Compile Include="Assets\Loona\Scripts\Entrada.cs" />
-     <Compile Include="Assets\Loona\Scripts\FimDeJogo.cs" />
-     <Compile Include="Assets\Loona\Scripts\FollowPlayer.cs" />
-     <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\DestroyOnContact.cs" />
-     <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\ObstaclesMoviment.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\SpawnOnRandomPoints.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportController.cs" />
-     <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportDrag.cs" />
-     <Compile Include="Assets\Loona\Scripts\GameMecanica\DeathFlag.cs" />
-     <Compile Include="Assets\Loona\Scripts\GameMecanica\GameObjects\AddScore.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\AddScore.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\ColisorPirulito.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnCollision.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnContact.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\FollowPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MapObjectsSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MassaPerdidaSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\ObstaclesMoviment.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\Shoot.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\Shotter.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\Teleport.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\TeleportDrag.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\AjustarRaioColisor.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\Crescer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\MassUpDown.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\Movimentacao.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaleTrack.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaleWithPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaryToObjectDirection.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\Tiro.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\TouchController.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\AjustarCamera.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraFollowPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FimDeJogo.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FollowObject.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\PinchZoom.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\SceneStart.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\ScoreManager.cs" />
-     <Compile Include="Assets\Loona\Scripts\InimigoSpawn.cs" />
-     <Compile Include="Assets\Loona\Scripts\MapObjectsSpawn.cs" />
-     <Compile Include="Assets\Loona\Scripts\MassUpDown.cs" />
-     <Compile Include="Assets\Loona\Scripts\Massa.cs" />
-     <Compile Include="Assets\Loona\Scripts\MassaPerdidaSpawn.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\VictoryCondition.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\ButtonController.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\ChangeCanvasScenes.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\Loading.cs" />
-     <Compile Include="Assets\Loona\Scripts\Movimentacao.cs" />
-     <Compile Include="Assets\Loona\Scripts\PinchZoom.cs" />
-     <Compile Include="Assets\Loona\Scripts\PlayerInicialize.cs" />
-     <Compile Include="Assets\Loona\Scripts\ScaleWithPlayer.cs" />
-     <Compile Include="Assets\Loona\Scripts\ScaryToObjectDirection.cs" />
-     <Compile Include="Assets\Loona\Scripts\SelectedPlayer.cs" />
-     <Compile Include="Assets\Loona\Scripts\Shoot.cs" />
-     <Compile Include="Assets\Loona\Scripts\StatusGosma.cs" />
-     <Compile Include="Assets\Loona\Scripts\Teleport.cs" />
-     <Compile Include="Assets\Loona\Scripts\Tiro.cs" />
-     <Compile Include="Assets\Loona\Scripts\fade3.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\SelectedPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\fade3.cs" />
      <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\Box.cs" />
      <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\Instruction.cs" />
      <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\LoseScript.cs" />
@@ -175,7 +168,6 @@
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTransform.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTrial.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadUndo.cs" />
-     <Compile Include="Assets\Shotter.cs" />
      <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
      <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />

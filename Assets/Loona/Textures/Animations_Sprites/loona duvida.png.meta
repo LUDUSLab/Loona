@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: b2ac2cdc8659e0b4bb088d1b3ffb4b90
+timeCreated: 1445966078
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: loona duvida_0
+    21300002: loona duvida_1
+    21300004: loona duvida_2
+    21300006: loona duvida_3
+    21300008: loona duvida_4
+    21300010: loona duvida_5
+    21300012: loona duvida_6
+    21300014: loona duvida_7
+    21300016: loona duvida_8
+    21300018: loona duvida_9
+    21300020: loona duvida_10
+    21300022: loona duvida_11
+    21300024: loona duvida_12
+    21300026: loona duvida_13
+    21300028: loona duvida_14
+    21300030: loona duvida_15
+    21300032: loona duvida_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: loona duvida_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1601
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1601
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_2
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1601
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_3
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1601
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_7
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_10
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_11
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_13
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_14
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_15
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: loona duvida_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

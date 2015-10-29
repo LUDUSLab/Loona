@@ -8,6 +8,8 @@ public class ColisorPirulito : MonoBehaviour {
     private GameObject controller;
     private Transform PlayerTransform;
     private Vector3 ScalePlayer;
+    public float DelayTimeAnimation = 2f;
+    private bool AnimationEnabled = true;
     // Use this for initialization
     void Start () {
         // Modified By JMG
@@ -24,8 +26,19 @@ public class ColisorPirulito : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player")
 		{
-            AnimatorTarget.SetTrigger("Collision");
+            if(AnimationEnabled)
+            {
+                AnimatorTarget.SetTrigger("Collision");
+                AnimationEnabled = false;
+                Invoke("SetAnimationEnabled", DelayTimeAnimation);
+            }
+            
         }
+    }
+
+    private void SetAnimationEnabled()
+    {
+        AnimationEnabled = true;
     }
     void OnTriggerEnter2D(Collider2D other)
     {

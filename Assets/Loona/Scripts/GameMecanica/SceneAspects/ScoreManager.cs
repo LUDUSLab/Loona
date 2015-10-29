@@ -14,8 +14,8 @@ public class ScoreManager : MonoBehaviour {
         ScoreGameOverr = GameObject.FindGameObjectWithTag(ScoreGameOver);
         HighScorer = GameObject.FindGameObjectWithTag(HighScoreTAG);
         getPlayerPrefs();
-        Score.GetComponent<Text>().text = "Score: " + Scorer;
-        ScoreGameOverr.GetComponent<Text>().text = "Score: " + Scorer;
+        Score.GetComponent<Text>().text = Scorer.ToString();
+        ScoreGameOverr.GetComponent<Text>().text = Scorer.ToString();
         HighScorer.GetComponent<Text>().text = "Highest Score: " + HighScore;
     }
 
@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour {
     public void SetScore(int ScoreToAdd)
     {
         Scorer = Scorer + ScoreToAdd;
-        Score.GetComponent<Text>().text = "Score: " + Scorer;
+        Score.GetComponent<Text>().text = Scorer.ToString();
         ScoreGameOverr.GetComponent<Text>().text = " " + Scorer;
         if (Scorer >= HighScore)
         {

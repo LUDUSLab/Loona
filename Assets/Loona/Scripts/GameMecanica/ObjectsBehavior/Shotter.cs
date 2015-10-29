@@ -9,6 +9,8 @@ public class Shotter : MonoBehaviour
     public bool HurtAnimation;
     private GameObject player;
     private GameObject PlayerExpressions;
+    public float DelayTimeAnimation = 1f;
+    private bool AnimationEnabled = true;
     // Use this for initialization
     void Start()
     {
@@ -29,9 +31,19 @@ public class Shotter : MonoBehaviour
             PlayerController.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
             if (HurtAnimation)
             {
-                PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
+                if(AnimationEnabled)
+                {
+                    PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
+                    AnimationEnabled = false;
+                    Invoke("SetAnimationEnabled", DelayTimeAnimation);
+                }
             }
             Destroy(gameObject);
         }
+    }
+
+    private void SetAnimationEnabled()
+    {
+        AnimationEnabled = true;
     }
 }

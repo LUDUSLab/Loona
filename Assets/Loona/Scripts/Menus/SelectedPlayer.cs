@@ -3,12 +3,13 @@ using System.Collections;
 
 public class SelectedPlayer : MonoBehaviour {
     public int PositionInVector;
+    public string LeveltoLoad;
     // Use this for initialization
 
 void OnMouseDown()
     {
         PlayerPrefs.SetInt("PositionInCharacterVector", PositionInVector);
-        Application.LoadLevel("game");
+        Application.LoadLevel(LeveltoLoad);
     }
    // void Start () {
 	

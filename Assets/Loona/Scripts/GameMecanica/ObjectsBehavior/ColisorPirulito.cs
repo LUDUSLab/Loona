@@ -29,7 +29,7 @@ public class ColisorPirulito : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "ColisorPlayer")
+        if (other.gameObject.tag == "Player")
         {
             GetComponent<CircleCollider2D>().enabled = false;
             Time.timeScale = 0.5f;

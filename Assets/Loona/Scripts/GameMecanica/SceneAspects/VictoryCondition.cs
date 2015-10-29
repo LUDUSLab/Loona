@@ -28,7 +28,6 @@ public class VictoryCondition : MonoBehaviour {
         else
         {
             MissionObjective.GetComponent<CircleCollider2D>().isTrigger = true;
-            Debug.Log("SizeChecked");
         }
     }
 }

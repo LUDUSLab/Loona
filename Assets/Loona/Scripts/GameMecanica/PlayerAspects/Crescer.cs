@@ -30,7 +30,7 @@ public class Crescer : MonoBehaviour {
 		{
 			controller.GetComponent<FimDeJogo>().Morrer();
 		}
-
+        
 
 	//void GrowPlis(){
 		// Modified By JMG Player.GetComponent<UnityJellySprite> ().m_Mass += MassAdd/Interactions;

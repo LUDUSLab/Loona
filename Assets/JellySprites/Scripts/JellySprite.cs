@@ -426,7 +426,7 @@ public abstract class JellySprite : MonoBehaviour
                 m_CentralPoint.GameObject.name = this.name + " Central Ref Point";
                 //<!--Modified by JMG
                     m_CentralPoint.GameObject.tag = "PontoCentralRP";
-                    m_CentralPoint.GameObject.AddComponent<ScaleWithPlayer>();
+                    //m_CentralPoint.GameObject.AddComponent<ScaleWithPlayer>();
                 //Modified by JMG -->
             }
 
@@ -808,8 +808,8 @@ public abstract class JellySprite : MonoBehaviour
         GameObject referencePointObject = new GameObject();
         //<!--Modified by JMG
             referencePointObject.name = this.name + " Ref Point " + m_ReferencePoints.Count.ToString();
-            referencePointObject.AddComponent<ScaleWithPlayer>();
-            referencePointObject.AddComponent<AjustarRaioColisor>();
+            //referencePointObject.AddComponent<ScaleWithPlayer>();
+            //referencePointObject.AddComponent<AjustarRaioColisor>();
             //referencePointObject.tag = "PontoRP" + m_ReferencePoints.Count.ToString();
         //Modified by JMG -->
         referencePointObject.transform.parent = m_ReferencePointParent.transform;

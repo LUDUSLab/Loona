@@ -4,19 +4,29 @@ using System.Collections;
 //Made By JMG
 public class ScaleWithPlayer : MonoBehaviour {
 
-    private GameObject player;
-    private Vector3 vector3 = new Vector3();
+    public GameObject PlayerObject;
+    public string PlayerObjectTag = "Player";
+    public GameObject ReferencePointsObject;
+    public string ReferencePointsTag = "ReferencePoints";
+    public float DelayTimeFindObject = 0.2f;
+    public float DelayTimeUpdate = 0.001f;
 
-	// Use this for initialization
-	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
-        InvokeRepeating("Update2", 0 , 0.001f);
+    // Use this for initialization
+    void Start () {
+        PlayerObject = GameObject.FindGameObjectWithTag(PlayerObjectTag);
+        Invoke("DelayFindObject", DelayTimeFindObject);
+        InvokeRepeating("Update2", DelayTimeFindObject , DelayTimeUpdate);
 	}
 	
-	// Update is called once per frame
+    private void DelayFindObject()
+    {
+        ReferencePointsObject = GameObject.FindGameObjectWithTag(ReferencePointsTag);
+    }
+
 	void Update2 () {
-        //vector3 = transform.position;
-        transform.localScale = player.transform.localScale;
-        //transform.position = vector3;
+        for(int i = 0; i < ReferencePointsObject.transform.childCount; i++)
+        {
+            ReferencePointsObject.transform.GetChild(i).transform.localScale = PlayerObject.transform.localScale;
+        }
 	}
 }

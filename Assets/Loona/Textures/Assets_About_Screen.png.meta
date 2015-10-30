@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7bb878623d7ae1840ad393001ad0e96b
-timeCreated: 1445367237
+timeCreated: 1446244949
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,7 @@ TextureImporter:
     21300014: Assets_About_Screen_7
     21300016: Assets_About_Screen_8
     21300018: Assets_About_Screen_9
+    21300020: Assets_About_Screen_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -96,8 +97,8 @@ TextureImporter:
     - name: Assets_About_Screen_3
       rect:
         serializedVersion: 2
-        x: 197
-        y: 231
+        x: 196
+        y: 232
         width: 388
         height: 93
       alignment: 0
@@ -163,6 +164,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Assets_About_Screen_10
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 245
+        width: 37
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 1, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

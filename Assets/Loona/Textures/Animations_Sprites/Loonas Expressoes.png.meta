@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: bdb0cfd2afba862459450c9cb94ddd7b
+timeCreated: 1446230932
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Loonas Expressoes_0
+    21300002: Loonas Expressoes_1
+    21300004: Loonas Expressoes_2
+    21300006: Loonas Expressoes_3
+    21300008: Loonas Expressoes_4
+    21300010: Loonas Expressoes_5
+    21300012: Loonas Expressoes_6
+    21300014: Loonas Expressoes_7
+    21300016: Loonas Expressoes_8
+    21300018: Loonas Expressoes_9
+    21300020: Loonas Expressoes_10
+    21300022: Loonas Expressoes_11
+    21300024: Loonas Expressoes_12
+    21300026: Loonas Expressoes_13
+    21300028: Loonas Expressoes_14
+    21300030: Loonas Expressoes_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Loonas Expressoes_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_2
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_3
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1201
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_7
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 801
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_10
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_11
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 401
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_13
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_14
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Loonas Expressoes_15
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

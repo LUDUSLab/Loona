@@ -5,7 +5,7 @@ public class ScaryToObjectDirection : MonoBehaviour {
 
     public string ObjectTag = "Enemy";
     public GameObject PlayerExpressions;
-    public string ScaryLeftTrigger = "Enemy_Letf";
+    public string ScaryLeftTrigger = "Enemy_Left";
     public string ScaryRightTrigger = "Enemy_Right";
 
     // Use this for initialization

@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\AjustarCamera.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\Testing\DebugOnTriggerCollision.cs">
     <Files>
-      <File FileName="Assets\Loona\Scripts\AjustarCamera.cs" Line="24" Column="39" />
+      <File FileName="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraFollowPlayer.cs" Line="56" Column="40" />
+      <File FileName="Assets\Loona\Scripts\Testing\DebugOnTriggerCollision.cs" Line="17" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

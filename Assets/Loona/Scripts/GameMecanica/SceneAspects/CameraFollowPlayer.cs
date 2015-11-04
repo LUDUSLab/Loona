@@ -9,6 +9,9 @@ public class CameraFollowPlayer : MonoBehaviour {
     private GameObject MainCamera;
     private float RelativeVelocity;
     private bool CanMove=true;
+    public float ErrorMargin = 0.1f;
+    public GameObject PlayerController;
+    private bool InputActivated = false;
 	Vector3 targetPos,CameraInitialPosition;
 	// Use this for initialization
     void Start()
@@ -23,17 +26,31 @@ public class CameraFollowPlayer : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-            Vector3 LimitVectorChecker;
-            Vector3 posNoZ = MainCamera.transform.position;
-            posNoZ.z = target.transform.position.z;
-            Vector3 targetDirection = (target.transform.position - posNoZ);
-		    CameraInitialPosition=MainCamera.transform.position;
-            RelativeVelocity = targetDirection.magnitude * Velocity;
+        Vector3 LimitVectorChecker;
+        Vector3 posNoZ = MainCamera.transform.position;
+        posNoZ.z = target.transform.position.z;
+        Vector3 targetDirection = (target.transform.position - posNoZ);
+        CameraInitialPosition = MainCamera.transform.position;
+        RelativeVelocity = targetDirection.magnitude * Velocity;
 
-            targetPos = MainCamera.transform.position + (targetDirection.normalized * RelativeVelocity * Time.deltaTime);
-            LimitVectorChecker = Vector3.Lerp(MainCamera.transform.position, targetPos + offset, 0.25f);
-            //CheckLimits(LimitVectorChecker);
-			MainCamera.transform.position = CheckLimits (LimitVectorChecker);
+        targetPos = MainCamera.transform.position + (targetDirection.normalized * RelativeVelocity * Time.deltaTime);
+        LimitVectorChecker = Vector3.Lerp(MainCamera.transform.position, targetPos + offset, 0.25f);
+        //CheckLimits(LimitVectorChecker);
+        MainCamera.transform.position = CheckLimits(LimitVectorChecker);
+        
+        if(!InputActivated)
+        {
+            if (targetPos.x - ErrorMargin <= MainCamera.transform.position.x && targetPos.x <= targetPos.x + ErrorMargin)
+            {
+                if (targetPos.y - ErrorMargin <= MainCamera.transform.position.y && targetPos.y <= targetPos.y + ErrorMargin)
+                {
+                    Debug.Log("oi");
+                    InputActivated = true;
+                    PlayerController.GetComponent<TouchController>().enabled=true;
+                }
+            }
+        }
+        
 		/*if (!CanMove) 
 			Invoke (("GoToInitialPosition"), Time.deltaTime);*/
     }

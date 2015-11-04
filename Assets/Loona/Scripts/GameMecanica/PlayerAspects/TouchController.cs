@@ -13,7 +13,7 @@ public class TouchController : MonoBehaviour {
     public string SceneAspectsControllerTag = "SceneAspectsController";
     private GameObject player;
     [SerializeField] private string PlayerTag = "Player";
-    public float movimentPorcentReduction = 0.1f;
+    public float movimentPorcentReduction = 0.05f;
     private GameObject PauseButton;
     [SerializeField] private string PauseButtonTag = "PauseButton";
     private float PauseButtonRange; //30f
@@ -43,10 +43,10 @@ public class TouchController : MonoBehaviour {
 
     private void CheckPinch()
     {
-        if (Input.touchCount == 2)
+        /*if (Input.touchCount == 2)
         {
             return;
-        }
+        }*/
         if (flag)
         {
             flag = false;
@@ -57,9 +57,9 @@ public class TouchController : MonoBehaviour {
             player.transform.localScale -= new Vector3(movimentPorcentReduction, movimentPorcentReduction, 1);
             Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction / 2;
 
-            horizontal = mousePos.x - (int)Screen.width / 2;
-            vertical = mousePos.y - (int)Screen.height / 2;
-
+            horizontal = mousePos.x - (int) Screen.width / 2 - player.transform.position.x;
+            vertical = mousePos.y - (int) Screen.height / 2 - player.transform.position.y;
+            
             GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
 
             GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);

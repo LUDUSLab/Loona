@@ -91,6 +91,7 @@
      <Compile Include="Assets\Loona\Scripts\Menus\ChangeCanvasScenes.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\Loading.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\SelectedPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\Menus\SoundController.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\fade3.cs" />
      <Compile Include="Assets\Loona\Scripts\Testing\DebugOnTriggerCollision.cs" />
      <Compile Include="Assets\Mad Level Manager\Examples\Stuff\Scripts\Box.cs" />

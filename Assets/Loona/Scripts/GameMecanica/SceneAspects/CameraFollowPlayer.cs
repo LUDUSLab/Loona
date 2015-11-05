@@ -44,7 +44,7 @@ public class CameraFollowPlayer : MonoBehaviour {
             {
                 if (targetPos.y - ErrorMargin <= MainCamera.transform.position.y && targetPos.y <= targetPos.y + ErrorMargin)
                 {
-                    Debug.Log("oi");
+                    //Debug.Log("oi");
                     InputActivated = true;
                     PlayerController.GetComponent<TouchController>().enabled=true;
                 }

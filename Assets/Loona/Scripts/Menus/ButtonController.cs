@@ -15,7 +15,10 @@ public class ButtonController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Active = false;
-		Animation = GameObject.Find ("Pivo").GetComponent<Animator> ();
+        if(Application.loadedLevelName == "game")
+        {
+            Animation = GameObject.Find("Pivo").GetComponent<Animator>();
+        }
 	}
 	
 	// Update is called once per frame

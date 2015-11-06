@@ -83,6 +83,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\ColliderScaleToCamera.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FimDeJogo.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FollowObject.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\MuteSound.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\PinchZoom.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\SceneStart.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\ScoreManager.cs" />

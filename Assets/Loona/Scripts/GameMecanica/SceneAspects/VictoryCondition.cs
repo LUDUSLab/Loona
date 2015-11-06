@@ -3,6 +3,7 @@ using System.Collections;
 
 public class VictoryCondition : MonoBehaviour {
     public float TimeToCheckSize;
+	public float ScaleOffset;
     private GameObject MissionObjective;
     private GameObject PlayerController;
     private Vector3 MissionObjectiveSize;
@@ -21,9 +22,11 @@ public class VictoryCondition : MonoBehaviour {
     void CompareSize()
     {
         Vector3 PlayerSize = PlayerController.GetComponent<ScaleTrack>().CheckPlayerSize();
-        if (MissionObjectiveSize.x > PlayerSize.x) //Tem que comparar pelo tamanho em X deles(diametro)
+		if (MissionObjectiveSize.x + ScaleOffset> PlayerSize.x) //Tem que comparar pelo tamanho em X deles(diametro)
         {
             MissionObjective.GetComponent<CircleCollider2D>().isTrigger = false;
+			Debug.Log("Planet"+MissionObjectiveSize.x + ScaleOffset);
+			Debug.Log("Player"+PlayerSize.x);
         }
         else
         {

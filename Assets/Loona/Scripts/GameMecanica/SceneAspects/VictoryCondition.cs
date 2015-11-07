@@ -25,8 +25,6 @@ public class VictoryCondition : MonoBehaviour {
 		if (MissionObjectiveSize.x + ScaleOffset> PlayerSize.x) //Tem que comparar pelo tamanho em X deles(diametro)
         {
             MissionObjective.GetComponent<CircleCollider2D>().isTrigger = false;
-			Debug.Log("Planet"+MissionObjectiveSize.x + ScaleOffset);
-			Debug.Log("Player"+PlayerSize.x);
         }
         else
         {

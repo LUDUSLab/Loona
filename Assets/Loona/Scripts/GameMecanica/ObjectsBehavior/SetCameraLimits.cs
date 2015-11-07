@@ -13,7 +13,6 @@ public class SetCameraLimits : MonoBehaviour {
 	
 	}
 	void OnTriggerStay2D(Collider2D other){
-		Debug.Log ("Colidiu");
 		if (SetX) {
 			Camera.main.GetComponent<CameraFollowPlayer>().SetXlimit(other.transform.position.x);
 		}

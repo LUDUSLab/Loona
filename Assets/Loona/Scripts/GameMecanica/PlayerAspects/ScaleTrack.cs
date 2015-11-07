@@ -6,8 +6,8 @@ public class ScaleTrack : MonoBehaviour {
     private GameObject Player;
 	// Use this for initialization
 	void Start () {
-        Player = GameObject.FindGameObjectWithTag("ColisorPlayer");
-        PlayerSize = Player.GetComponent<CircleCollider2D>().bounds.size;
+        Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerSize = Player.GetComponent<MeshRenderer>().bounds.size;
     }
 	
 	// Update is called once per frame
@@ -16,7 +16,7 @@ public class ScaleTrack : MonoBehaviour {
 	}
     public Vector3 CheckPlayerSize()
     {
-        PlayerSize = Player.GetComponent<CircleCollider2D>().bounds.size;
+        PlayerSize = Player.GetComponent<MeshRenderer>().bounds.size;
         return PlayerSize;
     }
 }

@@ -6,6 +6,7 @@ public class TouchController : MonoBehaviour {
     private float vertical;
     private float horizontal;
     private Vector3 mousePos;
+    private Vector3 DeltaMovement;
 	private bool flag = true;
     public float TouchTime = 0.5f;
     [SerializeField] private float TouchTimeDelayMax = 0.1f;
@@ -57,9 +58,14 @@ public class TouchController : MonoBehaviour {
             player.transform.localScale -= new Vector3(movimentPorcentReduction, movimentPorcentReduction, 1);
             Camera.main.orthographicSize = Camera.main.orthographicSize - movimentPorcentReduction / 2;
 
-            horizontal = mousePos.x - (int) Screen.width / 2 - player.transform.position.x;
+            /*horizontal = mousePos.x - (int) Screen.width / 2 - player.transform.position.x;
             vertical = mousePos.y - (int) Screen.height / 2 - player.transform.position.y;
-            
+            */
+
+            DeltaMovement = Camera.main.ScreenToWorldPoint(mousePos);
+            horizontal = DeltaMovement.x - player.transform.position.x;
+            vertical = DeltaMovement.y - player.transform.position.y;
+
             GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
 
             GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);

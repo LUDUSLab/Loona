@@ -18,6 +18,9 @@ public class TouchController : MonoBehaviour {
     private GameObject PauseButton;
     [SerializeField] private string PauseButtonTag = "PauseButton";
     private float PauseButtonRange; //30f
+    public GameObject TouchFeedBackPrefab;
+    private GameObject TouchFeedBackObject;
+    public float TimeToDestroyTouchFeedBack = 0.1f;
 
     // Use this for initialization
     void Start () {
@@ -66,9 +69,19 @@ public class TouchController : MonoBehaviour {
             vertical = mousePos.y - (int) Screen.height / 2 - player.transform.position.y;
             */
 
+            
             DeltaMovement = Camera.main.ScreenToWorldPoint(mousePos);
             horizontal = DeltaMovement.x - player.transform.position.x;
             vertical = DeltaMovement.y - player.transform.position.y;
+
+            if (TouchFeedBackPrefab != null)
+            {
+                TouchFeedBackObject = Instantiate(TouchFeedBackPrefab) as GameObject;
+                TouchFeedBackObject.transform.position = DeltaMovement;
+                TouchFeedBackObject.AddComponent<DestroyByTime>();
+                TouchFeedBackObject.GetComponent<DestroyByTime>().TimeToDestroy = TimeToDestroyTouchFeedBack;
+                TouchFeedBackObject.GetComponent<DestroyByTime>().StartDestroying();
+            }
 
             GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
 
@@ -102,4 +115,5 @@ public class TouchController : MonoBehaviour {
     void SetFlag() {
          this.flag= true;
     }
+
 }

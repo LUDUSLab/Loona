@@ -50,6 +50,10 @@ public class TouchController : MonoBehaviour {
         }*/
         if (flag)
         {
+            if(SceneAspectsController.GetComponent<ButtonController>().GameIsPaused)
+            {
+                return;
+            }
             flag = false;
             if (player.gameObject.transform.localScale.x <= 0.2)
             {

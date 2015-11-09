@@ -12,6 +12,8 @@ public class ButtonController : MonoBehaviour {
     public string LoadingSceneName;
 	private bool Active;
 	private Animator Animation;
+    public bool GameIsPaused = false;
+    private float DelayTimeToPause = 0.1f;
 	// Use this for initialization
 	void Start () {
 		Active = false;
@@ -57,18 +59,20 @@ public class ButtonController : MonoBehaviour {
     }
 	public void Pause(string pause)
 	{
+        GameIsPaused = true;
 		Time.timeScale = 0;
 		Animation.SetTrigger (pause);
 
 	}
 	public void Play(string play)
 	{
-		Time.timeScale = 1;
+        Time.timeScale = 1;
 		Animation.SetTrigger (play);
-		
+        Invoke("SetGamePausedFalse", DelayTimeToPause);
 	}
 	public void Restart()
     {
+        GameIsPaused = false;
         Time.timeScale = 1;
         Application.LoadLevel(Application.loadedLevel);
     }
@@ -86,5 +90,9 @@ public class ButtonController : MonoBehaviour {
     void PlayInTime()
     {
         Time.timeScale = 1;
+    }
+    void SetGamePausedFalse()
+    {
+        GameIsPaused = false;
     }
 }

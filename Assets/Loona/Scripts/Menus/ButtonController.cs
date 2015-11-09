@@ -16,6 +16,7 @@ public class ButtonController : MonoBehaviour {
     private float DelayTimeToPause = 0.1f;
 	// Use this for initialization
 	void Start () {
+        
 		Active = false;
         if(Application.loadedLevelName == "game")
         {

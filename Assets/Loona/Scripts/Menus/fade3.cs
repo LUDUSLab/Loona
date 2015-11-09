@@ -14,7 +14,8 @@ public class fade3 : MonoBehaviour {
 	}
 
 	void Start () { // Manipula o alpha
-		sprite.color = Color.clear;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        sprite.color = Color.clear;
 		StartCoroutine ("FadeOut");
 		Invoke ("StartFadeOut", time);
 		Invoke ("GoScene", time+fadeOutTime);

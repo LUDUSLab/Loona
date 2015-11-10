@@ -58,6 +58,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportController.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\AddScore.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\ColisorPirulito.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyByTime.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnCollision.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnContact.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\FollowPlayer.cs" />

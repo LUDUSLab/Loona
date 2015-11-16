@@ -41,7 +41,7 @@ public class Shotter : MonoBehaviour
                 {
                     if (AnimationEnabled)
                     {
-                        PlayerController.GetComponent<Crescer>().MassAddUp(player, -ScaleAddedToPlayer);
+                        PlayerController.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
                         PlayerExpressions.GetComponent<Animator>().SetTrigger("Hurt");
                         AnimationEnabled = false;
                         Invoke("SetAnimationEnabled", DelayTimeAnimation);
@@ -49,7 +49,7 @@ public class Shotter : MonoBehaviour
                 }
                 else //eat animation
                 {
-                    PlayerController.GetComponent<Crescer>().MassAddUp(player, ScaleAddedToPlayer);
+                    PlayerController.GetComponent<Crescer>().MassAddUp(player, -ScaleAddedToPlayer);
                     if (AnimationEnabled)
                     {
                         PlayerExpressions.GetComponent<Animator>().SetTrigger("Eat");

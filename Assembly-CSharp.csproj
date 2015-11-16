@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Hunt2.cs" />
      <Compile Include="Assets\JellySprites\Demo\Scripts\BlobBehaviour.cs" />
      <Compile Include="Assets\JellySprites\Demo\Scripts\BlobEyes.cs" />
      <Compile Include="Assets\JellySprites\Demo\Scripts\JellySpriteDemoManager.cs" />
@@ -174,6 +175,8 @@
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTransform.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadTrial.cs" />
      <Compile Include="Assets\Mad Level Manager\Scripts\MadCommons\MadUndo.cs" />
+     <Compile Include="Assets\RunAway2.cs" />
+     <Compile Include="Assets\WalkingDead.cs" />
      <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
      <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />

@@ -21,6 +21,7 @@ public class TouchController : MonoBehaviour {
     public GameObject TouchFeedBackPrefab;
     private GameObject TouchFeedBackObject;
     public float TimeToDestroyTouchFeedBack = 0.1f;
+    public float zTouchPosition = -4f;
 
     // Use this for initialization
     void Start () {
@@ -76,6 +77,7 @@ public class TouchController : MonoBehaviour {
 
             if (TouchFeedBackPrefab != null)
             {
+                DeltaMovement.z = zTouchPosition;
                 TouchFeedBackObject = Instantiate(TouchFeedBackPrefab) as GameObject;
                 TouchFeedBackObject.transform.position = DeltaMovement;
                 TouchFeedBackObject.AddComponent<DestroyByTime>();

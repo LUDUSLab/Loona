@@ -32,7 +32,7 @@ public class StateMachineC : MonoBehaviour {
 	
 
 		if(other.gameObject.tag == "Player"){
-			PlayerController.GetComponent<Movimentacao>().Mover(Distance.x*10000f,Distance.y*1000f,ForceMode2D.Force);
+			PlayerController.GetComponent<Movimentacao>().Mover(Distance.x*1000000f,Distance.y*100000f,ForceMode2D.Impulse);
 			Debug.Log ("Prestou");
 		}
 	}

@@ -78,6 +78,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaleTrack.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaleWithPlayer.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\ScaryToObjectDirection.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\StateMachineC.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\Tiro.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\TouchController.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\AjustarCamera.cs" />

@@ -4,8 +4,11 @@ using System.Collections;
 public class StateMachineC : MonoBehaviour {
 	private Vector2 PlayerScale,Distance,ThisScale,Controller;
 	private GameObject PlayerController,Player;
+	public GameObject HuntFace, RunFace;
 	private Animator animator;
 	public float MinDistance;
+	public float ScaleAddToPlayer;
+	public float PunchForce;
 
 	void Start () {
 		PlayerController = GameObject.FindGameObjectWithTag ("PlayerController");	
@@ -13,7 +16,7 @@ public class StateMachineC : MonoBehaviour {
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		PlayerScale = PlayerController.GetComponent<ScaleTrack> ().CheckPlayerSize ();
 		ThisScale = GetComponent<SpriteRenderer>().bounds.size;
 		Distance = Player.transform.position - this.transform.position;
@@ -21,10 +24,16 @@ public class StateMachineC : MonoBehaviour {
 
 		if ((Distance.sqrMagnitude < MinDistance && (PlayerScale.x < ThisScale.x))) {
 			animator.SetTrigger ("Hunt");
+			RunFace.SetActive(false);
+			HuntFace.SetActive(true);
 		} else if ((Distance.sqrMagnitude < MinDistance && (PlayerScale.x > ThisScale.x))) {
 			animator.SetTrigger("Run");
+			HuntFace.SetActive(false);
+			RunFace.SetActive(true);
 		}else if(Distance.sqrMagnitude > MinDistance){
 			animator.SetTrigger("Walk");
+			RunFace.SetActive(false);
+			HuntFace.SetActive(true);
 		}
 	}
 
@@ -32,11 +41,20 @@ public class StateMachineC : MonoBehaviour {
 	
 
 		if(other.gameObject.tag == "Player"){
-			PlayerController.GetComponent<Movimentacao>().Mover(Distance.x*1000000f,Distance.y*100000f,ForceMode2D.Impulse);
-			Debug.Log ("Prestou");
+			if(PlayerScale.x < ThisScale.x){
+				PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*-1f,Distance.normalized.y*-1f*PunchForce,ForceMode2D.Force);
+				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
+				//Player.transform.localScale = new Vector3(Player.transform.localScale.x - ScaleAddToPlayer,Player.transform.localScale.y - ScaleAddToPlayer);
+				Debug.Log ("Prestou");
+			}else if(PlayerScale.x > ThisScale.x){
+				ScaleAddToPlayer = ThisScale.x/2;
+				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
+				Destroy(this.gameObject);
+			
+			
+			}
+
 		}
 	}
-
-
 }
 

@@ -6,6 +6,7 @@ public class Hunt2 : StateMachineBehaviour {
 	private GameObject target;
 	private Vector2 direction;
 	private GameObject Enemy;
+	public float speed;
 	//private ForceMode2D force2;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,7 +17,7 @@ public class Hunt2 : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		direction = target.transform.position - Enemy.transform.position;
-		Enemy.GetComponent<Rigidbody2D> ().velocity = (direction.normalized*5);
+		Enemy.GetComponent<Rigidbody2D> ().velocity = (direction.normalized*speed);
 		//OnTriggerEnter2D (target.GetComponent<Collider2D>());
 	
 	}

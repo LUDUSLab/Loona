@@ -15,8 +15,10 @@ public class FimDeJogo : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void FixedUpdate () {
+	if(PlayerObject.transform.localScale.x< 0.2f){
+			Morrer();
+		}
 	}
 
     public void Morrer()
@@ -28,7 +30,9 @@ public class FimDeJogo : MonoBehaviour {
 
     private void DelayGameOver()
     {
-        GetComponent<ButtonController>().SetTriggerAnimator("GameOver");
-        Time.timeScale = 0;
+        
+		GetComponent<ButtonController>().SetTriggerAnimator("GameOver");
+        
+		Time.timeScale = 0;
     }
 }

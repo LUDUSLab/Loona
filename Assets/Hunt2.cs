@@ -12,7 +12,7 @@ public class Hunt2 : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		target = GameObject.FindGameObjectWithTag ("Player");
-		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		Enemy= animator.gameObject;
 	}
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{

@@ -11,8 +11,9 @@ public class RunAway2 : StateMachineBehaviour {
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		Enemy= animator.gameObject;
 		target = GameObject.FindGameObjectWithTag ("Player");
-		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		//Enemy = GameObject.FindGameObjectWithTag ("Gundan");
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

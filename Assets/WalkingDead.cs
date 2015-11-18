@@ -9,7 +9,7 @@ public class WalkingDead : StateMachineBehaviour {
 	//private ForceMode2D force2;
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		Enemy= animator.gameObject;
 	}
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{

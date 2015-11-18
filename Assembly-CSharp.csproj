@@ -62,7 +62,9 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyByTime.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnCollision.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\DestroyOnContact.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\EnemyScale.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\FollowPlayer.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\GundanGenerator.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MapObjectsSpawn.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MassaPerdidaSpawn.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\ObstaclesMoviment.cs" />

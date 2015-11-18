@@ -9,11 +9,12 @@ public class StateMachineC : MonoBehaviour {
 	public float MinDistance;
 	public float ScaleAddToPlayer;
 	public float PunchForce;
-
+	private Animator PlayerExpressions;
 	void Start () {
 		PlayerController = GameObject.FindGameObjectWithTag ("PlayerController");	
 		animator = GetComponent<Animator>();
 		Player = GameObject.FindGameObjectWithTag ("Player");
+		PlayerExpressions = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
 	}
 
 	void FixedUpdate () {
@@ -45,10 +46,10 @@ public class StateMachineC : MonoBehaviour {
 				PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*-1f,Distance.normalized.y*-1f*PunchForce,ForceMode2D.Force);
 				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
 				//Player.transform.localScale = new Vector3(Player.transform.localScale.x - ScaleAddToPlayer,Player.transform.localScale.y - ScaleAddToPlayer);
-				Debug.Log ("Prestou");
 			}else if(PlayerScale.x > ThisScale.x){
 				ScaleAddToPlayer = ThisScale.x/2;
 				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
+				PlayerExpressions.SetTrigger("Eat");
 				Destroy(this.gameObject);
 			
 			

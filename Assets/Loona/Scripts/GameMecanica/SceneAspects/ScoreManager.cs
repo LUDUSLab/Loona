@@ -4,19 +4,20 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public string ScoreTAG, ScoreGameOver, HighScoreTAG;
-    private GameObject Score, ScoreGameOverr, HighScorer;
+    private GameObject Score, HighScorer;
+	public GameObject ScoreGameOverr;
     private int Scorer;
     private int HighScore;
     // Use this for initialization
     void Start()
     {
         Score = GameObject.FindGameObjectWithTag(ScoreTAG);
-        ScoreGameOverr = GameObject.FindGameObjectWithTag(ScoreGameOver);
+		ScoreGameOverr = GameObject.FindGameObjectWithTag("ScoreGameOver");
         HighScorer = GameObject.FindGameObjectWithTag(HighScoreTAG);
         getPlayerPrefs();
-        Score.GetComponent<Text>().text = Scorer.ToString();
-        ScoreGameOverr.GetComponent<Text>().text = Scorer.ToString();
-        HighScorer.GetComponent<Text>().text = "Highest Score: " + HighScore;
+		Score.GetComponent<Text>().text = "Score " + Scorer.ToString();
+		ScoreGameOverr.GetComponent<Text>().text ="Score " + Scorer.ToString();
+        HighScorer.GetComponent<Text>().text = "" + HighScore;
     }
 
     // Update is called once per frame
@@ -24,14 +25,14 @@ public class ScoreManager : MonoBehaviour {
     {
         Scorer = Scorer + ScoreToAdd;
         Score.GetComponent<Text>().text = Scorer.ToString();
-        ScoreGameOverr.GetComponent<Text>().text = " " + Scorer;
+        ScoreGameOverr.GetComponent<Text>().text = "Score " + Scorer;
         if (Scorer >= HighScore)
         {
             HighScore = Scorer;
             setPlayerPrefs(Scorer);
             PlayerPrefs.Save();
         }
-        HighScorer.GetComponent<Text>().text = " " + HighScore;
+        HighScorer.GetComponent<Text>().text = "" + HighScore;
 
     }
     public int GetScore()

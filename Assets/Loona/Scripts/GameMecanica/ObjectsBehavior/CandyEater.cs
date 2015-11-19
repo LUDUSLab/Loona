@@ -5,6 +5,7 @@ public class CandyEater : MonoBehaviour
 {
     private Transform PlayerTransform;
     private GameObject PlayerController, PlayerScaler;
+    private MapObjectsSpawn MapsObjectsSpawnObject;
     public float TimeStepUpdate, MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
     public float TimeToDestroy = 1f;
     // Use this for initialization
@@ -13,6 +14,7 @@ public class CandyEater : MonoBehaviour
         PlayerController = GameObject.FindGameObjectWithTag("PlayerController");
         PlayerScaler = GameObject.Find("loona_v3(Clone)");
         PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
+        MapsObjectsSpawnObject = GameObject.FindGameObjectWithTag("BGController").GetComponent<MapObjectsSpawn>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class CandyEater : MonoBehaviour
     }
     void DestroyNow()
     {
+        MapsObjectsSpawnObject.InstantiateMapObjects(1, this.gameObject);
         Destroy(gameObject);
     }
 }

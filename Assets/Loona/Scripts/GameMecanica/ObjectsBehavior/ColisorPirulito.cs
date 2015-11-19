@@ -8,7 +8,8 @@ public class ColisorPirulito : MonoBehaviour {
     private GameObject controller;
     private Transform PlayerTransform;
     private Vector3 ScalePlayer;
-    public float DelayTimeAnimation = 2f;
+    public float DelayTimeAnimation = 6f;
+    public float DelayTimeVictory = 1f;
     private bool AnimationEnabled = true;
     // Use this for initialization
     void Start () {
@@ -47,7 +48,8 @@ public class ColisorPirulito : MonoBehaviour {
             GetComponent<CircleCollider2D>().enabled = false;
             Time.timeScale = 0.5f;
             AnimatorTarget.SetTrigger("Eat");
-            Invoke("CallVictory", VictoryAnimation.length);
+            //Invoke("CallVictory", VictoryAnimation.length);
+            Invoke("CallVictory", DelayTimeVictory);
             InvokeRepeating("Follow", 0, TimeStepUpdate);
             //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
         }

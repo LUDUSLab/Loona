@@ -4,11 +4,14 @@ using System.Collections;
 public class CandyEater : MonoBehaviour
 {
     private Transform PlayerTransform;
-    public float TimeStepUpdate, MoveSpeed, RotantionSpeed;
+    private GameObject PlayerController, PlayerScaler;
+    public float TimeStepUpdate, MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
     public float TimeToDestroy = 1f;
     // Use this for initialization
     void Start()
     {
+        PlayerController = GameObject.FindGameObjectWithTag("PlayerController");
+        PlayerScaler = GameObject.Find("loona_v3(Clone)");
         PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
     }
 
@@ -21,6 +24,7 @@ public class CandyEater : MonoBehaviour
     {
         if (other.gameObject.tag == "ColisorPlayer")
         {
+            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
             Destroy(gameObject.GetComponent<Rigidbody2D>());
             GetComponent<CircleCollider2D>().enabled = false;
             Invoke("DestroyNow", TimeToDestroy);

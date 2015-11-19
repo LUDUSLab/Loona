@@ -40,7 +40,7 @@ public class MapObjectsSpawn : MonoBehaviour
                 0);
             while (true)
             {   
-                if((vector3.x < PlanetXMin || vector3.x > PlanetXMax) && (vector3.y < PlanetYMin || vector3.y > PlanetYMax))
+                if(!((vector3.x > PlanetXMin && vector3.x < PlanetXMax) && (vector3.y > PlanetYMin && vector3.y < PlanetYMax)))
                 {
                     if (vector3.x != 0 && vector3.y != 0)
                     {

@@ -7,10 +7,6 @@ public class MapObjectsSpawn : MonoBehaviour
     [SerializeField] private int MaxAmountObjects;
     //food = 100, enemy = ?
     [SerializeField] private GameObject ObjectPrefab;
-    public float HorizontalMaxCoordinate = 42;
-    public float VerticalMaxCoordinate = 21;
-    public float HorizontalMinCoordinate = -24;
-    public float VerticalMinCoordinate = -21;
     [SerializeField] private string ObjectsParentTag;
     private GameObject ObjectsParentObject;
     private GameObject Object;
@@ -21,6 +17,7 @@ public class MapObjectsSpawn : MonoBehaviour
     void Start()
     {
         ObjectsParentObject = GameObject.FindGameObjectWithTag(ObjectsParentTag);
+        //BGLimitsObject = GetComponent<BGLimits>();
         InstantiateMapObjects(MaxAmountObjects, ObjectPrefab);
     }
     public void InstantiateMapObjects(int amount, GameObject ObjectPrefabParam)
@@ -30,13 +27,14 @@ public class MapObjectsSpawn : MonoBehaviour
         float PlanetXMax = PlanetObjectSize.transform.position.x + PlanetObjectSize.radius + 1;
         float PlanetYMin = PlanetObjectSize.transform.position.y - PlanetObjectSize.radius + 1;
         float PlanetYMax = PlanetObjectSize.transform.position.y + PlanetObjectSize.radius + 1;
-
+        BGLimits BGLimitsObject = new BGLimits();
+        Bounds BGLimits = BGLimitsObject.getBGLimits();
         for (int i = 0; i < amount; i++)
         {
             Object = Instantiate(ObjectPrefab);
 
-            vector3 = new Vector3((int)Random.Range(HorizontalMinCoordinate, HorizontalMaxCoordinate),
-                (int)Random.Range(VerticalMinCoordinate, VerticalMaxCoordinate),
+            vector3 = new Vector3((int)Random.Range(BGLimits.min.x, BGLimits.max.x),
+                (int)Random.Range(BGLimits.min.y, BGLimits.max.y),
                 0);
             while (true)
             {   
@@ -47,9 +45,10 @@ public class MapObjectsSpawn : MonoBehaviour
                         break;
                     }
                 }
-                vector3 = new Vector3((int)Random.Range(HorizontalMinCoordinate, HorizontalMaxCoordinate),
-                (int)Random.Range(VerticalMinCoordinate, VerticalMaxCoordinate),
+                vector3 = new Vector3((int)Random.Range(BGLimits.min.x, BGLimits.max.x),
+                (int)Random.Range(BGLimits.min.y, BGLimits.max.y),
                 0);
+                //Debug.Log("here!");
             }
 
 

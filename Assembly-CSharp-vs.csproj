@@ -55,6 +55,7 @@
      <Compile Include="Assets\JellySprites\Scripts\JellySprite.cs" />
      <Compile Include="Assets\JellySprites\Scripts\JellySpriteReferencePoint.cs" />
      <Compile Include="Assets\JellySprites\Scripts\UnityJellySprite.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\BGLimits.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\SpawnOnRandomPoints.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportController.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\AddScore.cs" />

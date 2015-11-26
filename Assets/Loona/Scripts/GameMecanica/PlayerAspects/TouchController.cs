@@ -87,7 +87,7 @@ public class TouchController : MonoBehaviour {
 
             GetComponent<Movimentacao>().Mover(horizontal, vertical, ForceMode2D.Force);
 
-            GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
+            //GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
 
             Invoke("SetFlag", TouchTime);
         }

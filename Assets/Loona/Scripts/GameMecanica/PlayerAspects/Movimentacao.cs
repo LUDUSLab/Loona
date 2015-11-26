@@ -12,6 +12,7 @@ public class Movimentacao : MonoBehaviour {
 	[SerializeField] private string LostMassTag = "MassaPerdida";
 	[SerializeField] private string PlayerTag = "Player";
 	[SerializeField] private string ReferencePointsTag = "ReferencePoints";
+    public bool IsPushMovement;
 	//[SerializeField] private string Controller = "GameController";
 	//public float movimentPorcentReduction;
 
@@ -24,7 +25,17 @@ public class Movimentacao : MonoBehaviour {
     }
     public void Mover(float horizontal, float vertical, ForceMode2D mode)
     {
-        direcao = new Vector2(-horizontal, -vertical);
+        if(IsPushMovement)
+        {
+            direcao = new Vector2(-horizontal, -vertical);
+            GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);
+        }
+        else
+        {
+            direcao = new Vector2(horizontal, vertical);
+            GetComponent<Tiro>().Atirar(-horizontal, -vertical, ForceMode2D.Force);
+        }
+        
         direcao.Normalize();
         direcao.Scale(new Vector2(ForcaImpulso, ForcaImpulso));
         // impulsionando o objeto pra direcao oposta

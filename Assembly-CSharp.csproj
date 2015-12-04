@@ -88,6 +88,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\AjustarCamera.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\ColliderScaleToCamera.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\EscapeButton.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FimDeJogo.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\FollowObject.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\MuteSound.cs" />

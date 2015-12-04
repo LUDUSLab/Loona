@@ -7,10 +7,10 @@ public class TouchController : MonoBehaviour {
     private float horizontal;
     private Vector3 mousePos;
     private Vector3 DeltaMovement;
-	private bool flag = true;
+    private bool flag = true;
     public float TouchTime = 0.5f;
     [SerializeField] private float TouchTimeDelayMax = 0.1f;
-	private GameObject SceneAspectsController;
+    private GameObject SceneAspectsController;
     public string SceneAspectsControllerTag = "SceneAspectsController";
     private GameObject player;
     [SerializeField] private string PlayerTag = "Player";
@@ -22,6 +22,8 @@ public class TouchController : MonoBehaviour {
     private GameObject TouchFeedBackObject;
     public float TimeToDestroyTouchFeedBack = 0.1f;
     public float zTouchPosition = -4f;
+    private float TimeTouching = 0;
+    public float TimeTouchingToMove = 0.2f;
 
     // Use this for initialization
     void Start () {
@@ -36,14 +38,21 @@ public class TouchController : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Fire1"))
 		{
+            TimeTouching = Time.realtimeSinceStartup;
+		}
+        if(Input.GetButtonUp("Fire1"))
+        {
             mousePos = Input.mousePosition;
             if (ButtonWasClicked(mousePos, PauseButton.gameObject.transform.position, PauseButtonRange))
             {
                 return;
             }
-            Invoke("CheckPinch", TouchTimeDelayMax);
-			
-		}
+            if(Time.realtimeSinceStartup - TimeTouching < TimeTouchingToMove)
+            {
+                TimeTouching = 0;
+                Invoke("CheckPinch", TouchTimeDelayMax);
+            }
+        }
 	}
 
     private void CheckPinch()
@@ -54,7 +63,7 @@ public class TouchController : MonoBehaviour {
         }*/
         if (flag)
         {
-            if(SceneAspectsController.GetComponent<ButtonController>().GameIsPaused)
+            if (SceneAspectsController.GetComponent<ButtonController>().GameIsPaused)
             {
                 return;
             }
@@ -70,11 +79,12 @@ public class TouchController : MonoBehaviour {
             vertical = mousePos.y - (int) Screen.height / 2 - player.transform.position.y;
             */
 
-            
+
             DeltaMovement = Camera.main.ScreenToWorldPoint(mousePos);
             horizontal = DeltaMovement.x - player.transform.position.x;
             vertical = DeltaMovement.y - player.transform.position.y;
 
+           
             if (TouchFeedBackPrefab != null)
             {
                 DeltaMovement.z = zTouchPosition;

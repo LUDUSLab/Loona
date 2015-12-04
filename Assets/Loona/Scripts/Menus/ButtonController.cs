@@ -14,10 +14,11 @@ public class ButtonController : MonoBehaviour {
 	private Animator Animation;
     public bool GameIsPaused = false;
     private float DelayTimeToPause = 0.1f;
-	// Use this for initialization
-	void Start () {
-        
-		Active = false;
+    public GameObject ExitPopUp;
+    // Use this for initialization
+
+    void Start () {
+        Active = false;
         if(Application.loadedLevelName == "game")
         {
             Animation = GameObject.Find("Pivo").GetComponent<Animator>();
@@ -95,5 +96,20 @@ public class ButtonController : MonoBehaviour {
     void SetGamePausedFalse()
     {
         GameIsPaused = false;
+    }
+
+    public void InvokeExitPopUp()
+    {
+        ExitPopUp.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void UninvokeExitPopUp()
+    {
+        ExitPopUp.SetActive(false);
     }
 }

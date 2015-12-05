@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\EnemyScale.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MapObjectsSpawn.cs">
     <Files>
-      <File FileName="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\EnemyScale.cs" Line="15" Column="5" />
-      <File FileName="Assets\Loona\Scripts\GameMecanica\SceneAspects\ScoreManager.cs" Line="27" Column="61" />
-      <File FileName="Assets\Loona\Scripts\GameMecanica\PlayerAspects\StateMachineC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\MapObjectsSpawn.cs" Line="30" Column="1" />
+      <File FileName="Assets\Loona\Scripts\GameMecanica\BG Scripts\SpawnOnRandomPoints.cs" Line="1" Column="1" />
+      <File FileName="Assets\Loona\Scripts\GameMecanica\ObjectsBehavior\EnemyScale.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

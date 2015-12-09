@@ -24,6 +24,8 @@ public class TouchController : MonoBehaviour {
     public float zTouchPosition = -4f;
     private float TimeTouching = 0;
     public float TimeTouchingToMove = 0.2f;
+    
+    
 
     // Use this for initialization
     void Start () {
@@ -38,6 +40,9 @@ public class TouchController : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Fire1"))
 		{
+            
+            //Debug.Log("here");
+            
             TimeTouching = Time.realtimeSinceStartup;
 		}
         if(Input.GetButtonUp("Fire1"))

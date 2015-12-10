@@ -10,11 +10,13 @@ public class StateMachineC : MonoBehaviour {
 	public float ScaleAddToPlayer;
 	public float PunchForce;
 	private Animator PlayerExpressions;
+    private CameraShake Shake;
 	void Start () {
 		PlayerController = GameObject.FindGameObjectWithTag ("PlayerController");	
 		animator = GetComponent<Animator>();
 		Player = GameObject.FindGameObjectWithTag ("Player");
 		PlayerExpressions = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
+        Shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
 	}
 
 	void FixedUpdate () {
@@ -39,11 +41,11 @@ public class StateMachineC : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-	
 
 		if(other.gameObject.tag == "Player"){
 			if(PlayerScale.x < ThisScale.x){
-				PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*-1f,Distance.normalized.y*-1f*PunchForce,ForceMode2D.Force);
+                Shake.SetTrueCanIShake();
+                PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*-1f,Distance.normalized.y*-1f*PunchForce,ForceMode2D.Force);
 				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
 				//Player.transform.localScale = new Vector3(Player.transform.localScale.x - ScaleAddToPlayer,Player.transform.localScale.y - ScaleAddToPlayer);
 			}else if(PlayerScale.x > ThisScale.x){

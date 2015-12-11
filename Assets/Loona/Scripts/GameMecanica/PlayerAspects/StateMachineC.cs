@@ -43,7 +43,7 @@ public class StateMachineC : MonoBehaviour {
 
 		if(other.gameObject.tag == "Player"){
 			if(PlayerScale.x < ThisScale.x){
-				PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*-1f,Distance.normalized.y*-1f*PunchForce,ForceMode2D.Force);
+				PlayerController.GetComponent<Movimentacao>().Mover(Distance.normalized.x*PunchForce*10f,Distance.normalized.y*10f*PunchForce,ForceMode2D.Force);
 				PlayerController.GetComponent<Crescer>().MassAddUp(Player,ScaleAddToPlayer);
 				//Player.transform.localScale = new Vector3(Player.transform.localScale.x - ScaleAddToPlayer,Player.transform.localScale.y - ScaleAddToPlayer);
 			}else if(PlayerScale.x > ThisScale.x){

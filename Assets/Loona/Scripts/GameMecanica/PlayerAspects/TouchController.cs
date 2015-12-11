@@ -23,7 +23,7 @@ public class TouchController : MonoBehaviour {
     public float TimeToDestroyTouchFeedBack = 0.1f;
     public float zTouchPosition = -4f;
     private float TimeTouching = 0;
-    public float TimeTouchingToMove = 0.2f;
+    public float TimeTouchingToMove = 0.3f;
 
     // Use this for initialization
     void Start () {

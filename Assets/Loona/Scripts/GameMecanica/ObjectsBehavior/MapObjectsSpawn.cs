@@ -12,7 +12,6 @@ public class MapObjectsSpawn : MonoBehaviour
     private GameObject Object;
     private Vector3 vector3 = new Vector3();
     public GameObject PlanetObject;
-
     // Use this for initialization
     void Start()
     {

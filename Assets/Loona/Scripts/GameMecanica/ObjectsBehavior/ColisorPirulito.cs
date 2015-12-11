@@ -45,24 +45,27 @@ public class ColisorPirulito : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            AnimatorTarget.SetTrigger("Eat");
             GetComponent<CircleCollider2D>().enabled = false;
             Time.timeScale = 0.5f;
             AnimatorTarget.SetTrigger("Eat");
-            //Invoke("CallVictory", VictoryAnimation.length);
             Invoke("CallVictory", DelayTimeVictory);
-            InvokeRepeating("Follow", 0, TimeStepUpdate);
-            //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
         }
+    }
+    public void Victory() {
+        //Invoke("CallVictory", VictoryAnimation.length);
+        InvokeRepeating("Follow", 0, TimeStepUpdate);
     }
      void CallVictory(){
         Time.timeScale = 0;
         controller.GetComponent<Animator>().SetTrigger("Victory");
-        }
+        Destroy(gameObject);
+    }
     void Follow()
     {
         Vector3 AuxVector3;
         /* Look at Player*/
-        AuxVector3 = new Vector3((PlayerTransform.position.x - transform.position.x), (PlayerTransform.position.y - transform.position.y), (PlayerTransform.position.z - transform.position.z));
+        AuxVector3 = new Vector3((PlayerTransform.position.x - transform.position.x), (PlayerTransform.position.y - transform.position.y), ( transform.position.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(AuxVector3), RotantionSpeed * Time.deltaTime);
 
         /* Move at Player*/

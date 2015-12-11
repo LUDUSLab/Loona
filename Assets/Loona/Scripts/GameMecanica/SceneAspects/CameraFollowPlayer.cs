@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraFollowPlayer : MonoBehaviour {
-    public float Velocity, minDistance, followDistance;
+    public float Velocity;
     private GameObject target;
     public Vector3 offset;
     public float MaxX,MinX, MaxY,MinY;
@@ -19,7 +19,8 @@ public class CameraFollowPlayer : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player");
         targetPos = transform.position;
         MainCamera = Camera.main.gameObject;
-        //InvokeRepeating("Follow", 0, TimeStepUpdate);
+        // Adjust Camera Limits According do BG with Edge Colliders
+    
     }
 
 
@@ -30,15 +31,17 @@ public class CameraFollowPlayer : MonoBehaviour {
         Vector3 posNoZ = MainCamera.transform.position;
         posNoZ.z = target.transform.position.z;
         Vector3 targetDirection = (target.transform.position - posNoZ);
-        CameraInitialPosition = MainCamera.transform.position;
+        if (!MainCamera.GetComponent<BoxCollider2D>().IsTouchingLayers(10))
+            CameraInitialPosition = MainCamera.transform.position;
         RelativeVelocity = targetDirection.magnitude * Velocity;
 
         targetPos = MainCamera.transform.position + (targetDirection.normalized * RelativeVelocity * Time.deltaTime);
         LimitVectorChecker = Vector3.Lerp(MainCamera.transform.position, targetPos + offset, 0.25f);
         //CheckLimits(LimitVectorChecker);
         MainCamera.transform.position = CheckLimits(LimitVectorChecker);
-        
-        if(!InputActivated)
+        if (MainCamera.GetComponent<BoxCollider2D>().IsTouchingLayers(10)) // Layer dos limites
+            MainCamera.transform.position = CameraInitialPosition;
+        if (!InputActivated)
         {
             if (targetPos.x - ErrorMargin <= MainCamera.transform.position.x && targetPos.x <= targetPos.x + ErrorMargin)
             {

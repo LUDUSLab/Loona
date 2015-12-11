@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TeleportDrag : MonoBehaviour {
-    public GameObject PullOBJ;
+    private GameObject PullOBJ;
     public float ForceSpeed;
 
     public void OnTriggerStay2D(Collider2D coll)

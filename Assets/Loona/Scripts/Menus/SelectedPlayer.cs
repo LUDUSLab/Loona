@@ -4,6 +4,7 @@ using System.Collections;
 public class SelectedPlayer : MonoBehaviour {
     public int PositionInVector;
     public string LeveltoLoad;
+    public GameObject Fade;
    // private int conttouch= 0 ;
     // Use this for initialization
 
@@ -16,7 +17,8 @@ void OnMouseDrag()
 
     void OnMouseUpAsButton()
     {
-        Application.LoadLevel(LeveltoLoad);
+        Fade.GetComponent<Animator>().SetBool("Fade", true);
+        PlayerPrefs.SetString("NextScene", LeveltoLoad);
     }
     //void OnMouseExit()
     // {

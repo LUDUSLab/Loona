@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI; 
 public class ButtonController : MonoBehaviour {
 	public GameObject [] ButtonsHideAppear;
+    public GameObject Fade;
 	public string OnTrigger, OffTrigger;
 	public Sprite ButtonON, ButtonOFF;
 	public int Speed;
@@ -15,13 +16,11 @@ public class ButtonController : MonoBehaviour {
     public bool GameIsPaused = false;
     private float DelayTimeToPause = 0.1f;
     public GameObject ExitPopUp;
-    public string SkipMissionTrigger = "SkipMission";
-    public GameObject PivoObject;
     // Use this for initialization
 
     void Start () {
         Active = false;
-        if(Application.loadedLevelName == "game")
+        if(Application.loadedLevelName.StartsWith("Level"))
         {
             Animation = GameObject.Find("Pivo").GetComponent<Animator>();
         }
@@ -50,23 +49,20 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 	public void LoadScene(string Scene){
- 
-            Application.LoadLevel (Scene);
+            Fade.GetComponent<Animator>().SetBool("Fade", true);
+            PlayerPrefs.SetString("NextScene", Scene);
 	}
     public void LoadGame()
     {
-        Application.LoadLevel(GameSceneName);
+        Fade.GetComponent<Animator>().SetBool("Fade", true);
+        PlayerPrefs.SetString("NextScene", GameSceneName);
     }
-    public void LoadGameByTime()
-    {
-        Invoke("LoadGame", DelayTimeToLoad);
-    }
+
 	public void Pause(string pause)
 	{
         GameIsPaused = true;
 		Time.timeScale = 0;
 		Animation.SetTrigger (pause);
-
 	}
 	public void Play(string play)
 	{
@@ -76,9 +72,11 @@ public class ButtonController : MonoBehaviour {
 	}
 	public void Restart()
     {
-        GameIsPaused = false;
-        Time.timeScale = 1;
-        Application.LoadLevel(Application.loadedLevel);
+        //GameIsPaused = false;
+        //Time.timeScale = 1;
+        Fade.GetComponent<Animator>().SetBool("Fade", true);
+        PlayerPrefs.SetString("NextScene", Application.loadedLevelName);
+        //Application.LoadLevel(Application.loadedLevel);
     }
     public void SetTriggerAnimator(string triggertoset)
     {
@@ -113,10 +111,5 @@ public class ButtonController : MonoBehaviour {
     public void UninvokeExitPopUp()
     {
         ExitPopUp.SetActive(false);
-    }
-
-    public void SkipMission()
-    {
-        PivoObject.GetComponent<Animator>().SetTrigger(SkipMissionTrigger);
     }
 }

@@ -12,7 +12,7 @@ public class ChangeCanvasScenes : MonoBehaviour {
 	void Update () {
 	
 	}
-	public void ChangeIt(string SceneToAppear){
-		MainCanvas.GetComponent<Animator> ().SetTrigger (SceneToAppear);
+	public void ChangeIt(string MenuFeedBack){
+		MainCanvas.GetComponent<Animator> ().SetTrigger (MenuFeedBack);
 	}
 }

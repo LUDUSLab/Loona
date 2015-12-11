@@ -13,7 +13,7 @@ public class DebugOnTriggerCollision : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter2D(Collider2D cool){
-		if(TriggerEnter)Debug.Log ("TriggerEnter"+ cool.gameObject);
+		if(TriggerEnter)Debug.Log ("TriggerEnter"+ cool.gameObject.tag);
 	}
 	void OntriggerExit2D( Collider2D cool){
 		if(TriggerExit)Debug.Log ("TriggerExit"+ cool.gameObject);

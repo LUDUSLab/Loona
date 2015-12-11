@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BGLimits : MonoBehaviour {
 
-    public string BGObjectTag = "BGObject";
+    public string BGObjectTag = "Background";
 
     // Use this for initialization
     void Start ()
@@ -14,7 +14,7 @@ public class BGLimits : MonoBehaviour {
 
     public Bounds getBGLimits()
     {
-        Bounds BGBounds = GameObject.FindGameObjectWithTag(BGObjectTag).GetComponent<SpriteRenderer>().bounds;
+        Bounds BGBounds = GameObject.Find(BGObjectTag).GetComponent<SpriteRenderer>().bounds;
         Bounds BGBoundLimits = new Bounds();
         Vector3 BGBoundsMin = new Vector3();
         Vector3 BGBoundsMax = new Vector3();

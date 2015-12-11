@@ -41,7 +41,7 @@ public class SoundController : MonoBehaviour {
 		//}
 	//}
 	void OnLevelWasLoaded(){
-		if (Application.loadedLevelName =="game") {
+		if (Application.loadedLevelName == "Level1") {
             Menu.Stop();
             MusicaStage();
 		}

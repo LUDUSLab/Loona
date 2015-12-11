@@ -24,7 +24,7 @@ public class ScaleWithPlayer : MonoBehaviour {
     }
 
 	void Update2 () {
-        Debug.Log("here");
+        
         for(int i = 0; i < ReferencePointsObject.transform.childCount; i++)
         {
             ReferencePointsObject.transform.GetChild(i).transform.localScale = PlayerObject.transform.localScale;

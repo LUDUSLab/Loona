@@ -16,6 +16,8 @@ public class ButtonController : MonoBehaviour {
     public bool GameIsPaused = false;
     private float DelayTimeToPause = 0.1f;
     public GameObject ExitPopUp;
+    public string SkipMissionTrigger = "SkipMission";
+    public GameObject PivoObject;
     // Use this for initialization
 
     void Start () {
@@ -111,5 +113,10 @@ public class ButtonController : MonoBehaviour {
     public void UninvokeExitPopUp()
     {
         ExitPopUp.SetActive(false);
+    }
+
+    public void SkipMission()
+    {
+        PivoObject.GetComponent<Animator>().SetTrigger(SkipMissionTrigger);
     }
 }

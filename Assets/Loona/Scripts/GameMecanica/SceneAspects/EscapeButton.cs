@@ -31,7 +31,8 @@ public class EscapeButton : MonoBehaviour {
             }
             else
             {
-                Application.LoadLevel(SceneToLoad);
+                ButtonController buttonController = Controller.GetComponent<ButtonController>();
+                buttonController.LoadScene(SceneToLoad);
             }
         }
 	}

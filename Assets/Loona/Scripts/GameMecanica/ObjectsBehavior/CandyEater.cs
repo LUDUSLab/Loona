@@ -8,6 +8,7 @@ public class CandyEater : MonoBehaviour
     private MapObjectsSpawn MapsObjectsSpawnObject;
     public float TimeStepUpdate, MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
     public float TimeToDestroy = 1f;
+    private GameObject Player;
     // Use this for initialization
     void Start()
     {
@@ -26,11 +27,11 @@ public class CandyEater : MonoBehaviour
     {
         if (other.gameObject.tag == "ColisorPlayer")
         {
-            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
-            Destroy(gameObject.GetComponent<Rigidbody2D>());
-            GetComponent<CircleCollider2D>().enabled = false;
-            Invoke("DestroyNow", TimeToDestroy);
+            Destroy(GetComponent<Rigidbody2D>());
+            Player = other.gameObject;
             InvokeRepeating("Follow", 0, TimeStepUpdate);
+            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
+            GetComponent<CircleCollider2D>().enabled = false;
 
         }
 
@@ -38,6 +39,10 @@ public class CandyEater : MonoBehaviour
     }
     void Follow()
     {
+        float Distance = transform.position.x - Player.transform.position.x;
+        Distance = Mathf.Abs(Distance);
+        if (Distance<0.1)
+            Destroy(gameObject);
         Vector3 AuxVector3;
         /* Look at Player*/
         AuxVector3 = new Vector3((PlayerTransform.position.x - transform.position.x), (PlayerTransform.position.y - transform.position.y), (PlayerTransform.position.z - transform.position.z));
@@ -45,6 +50,7 @@ public class CandyEater : MonoBehaviour
 
         /* Move at Player*/
         transform.position += (transform.forward) * MoveSpeed * Time.deltaTime;
+
     }
     void DestroyNow()
     {

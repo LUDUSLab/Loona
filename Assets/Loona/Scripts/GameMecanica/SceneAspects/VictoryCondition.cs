@@ -29,7 +29,6 @@ public class VictoryCondition : MonoBehaviour {
         else
         {
             MissionObjective.GetComponent<CircleCollider2D>().isTrigger = true;
-            MissionObjective.GetComponent<ColisorPirulito>().Victory();
         }
     }
 }

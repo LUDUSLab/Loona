@@ -45,6 +45,7 @@ public class ColisorPirulito : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            Victory();
             AnimatorTarget.SetTrigger("Eat");
             GetComponent<CircleCollider2D>().enabled = false;
             Time.timeScale = 0.5f;

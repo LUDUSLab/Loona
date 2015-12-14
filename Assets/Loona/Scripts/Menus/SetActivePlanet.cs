@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SetActivePlanet : MonoBehaviour {
 
 
 	// Use this for initialization
 	void Start () {
-		int MinStage = 1;
+		/*int MinStage = 1;
 		int i = MinStage;
 		int MaxStage = 1;
 		string StagePrefix = "Level";
@@ -17,7 +18,11 @@ public class SetActivePlanet : MonoBehaviour {
 			GameObject.FindGameObjectWithTag(PlanetObjectTagPrefix + i.ToString()).GetComponent<SpriteRenderer>().color = 
 				new Color(255, 255, 255, 255);
 		}
-	}
+        GameObject.FindGameObjectWithTag(PlanetObjectTagPrefix + 1).GetComponent<Image>().color = Color.white;
+                //new Color(255, 255, 255, 255);
+
+    */
+    }
 	
 	// Update is called once per frame
 	void Update () {

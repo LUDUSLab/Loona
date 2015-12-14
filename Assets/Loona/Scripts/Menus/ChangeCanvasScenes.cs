@@ -14,7 +14,11 @@ public class ChangeCanvasScenes : MonoBehaviour {
 	}
 	public void ChangeIt(string MenuFeedBack){
 		MainCanvas.GetComponent<Animator> ().SetTrigger (MenuFeedBack);
-
-        GameObject.Find("LightEffect").SetActive(false);
+        if(MenuFeedBack == "About")
+        {
+            GetComponent<EscapeButton>().IsInAboutScreen = true;
+        }
+        if(GameObject.Find("LightEffect"))
+             GameObject.Find("LightEffect").SetActive(false);
 	}
 }

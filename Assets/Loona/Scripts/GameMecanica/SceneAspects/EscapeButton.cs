@@ -6,6 +6,7 @@ public class EscapeButton : MonoBehaviour {
     public string SceneToLoad = "None";
     public float RepeatRate = 0.02f;
     public GameObject Controller;
+    public bool IsInAboutScreen = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,17 @@ public class EscapeButton : MonoBehaviour {
         {
             if (SceneToLoad == "None")
             {
-                ButtonController buttonController = Controller.GetComponent<ButtonController>();
-                buttonController.InvokeExitPopUp();
+                if (IsInAboutScreen)
+                {
+                    ChangeCanvasScenes CCSObject = Controller.GetComponent<ChangeCanvasScenes>();
+                    IsInAboutScreen = false;
+                    CCSObject.ChangeIt("MenuPrincipal");
+                }
+                else
+                {
+                    ButtonController buttonController = Controller.GetComponent<ButtonController>();
+                    buttonController.InvokeExitPopUp();
+                }
             }
             else if(SceneToLoad == "Pause")
             {

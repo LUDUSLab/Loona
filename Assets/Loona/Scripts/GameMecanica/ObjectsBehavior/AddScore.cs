@@ -5,7 +5,6 @@ public class AddScore : MonoBehaviour {
     public int ScoreToAdd;
     public string SceneAspectsControllerTag;
     private GameObject SceneAspectsController;
-    public float TimeToDelay = 0.1f;
 	// Use this for initialization
 	void Start () {
         SceneAspectsController = GameObject.FindGameObjectWithTag(SceneAspectsControllerTag);
@@ -22,10 +21,5 @@ public class AddScore : MonoBehaviour {
         {
             SceneAspectsController.GetComponent<ScoreManager>().SetScore(ScoreToAdd);
         }
-        Invoke("DelayFunction", TimeToDelay);
-    }
-    void DelayFunction()
-    {
-        GetComponent<Collider2D>().enabled = false;
     }
 }

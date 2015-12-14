@@ -29,12 +29,11 @@ public class TouchController : MonoBehaviour {
     void Start () {
         SceneAspectsController = GameObject.FindGameObjectWithTag(SceneAspectsControllerTag);
 		player = GameObject.FindGameObjectWithTag (PlayerTag);
-		InvokeRepeating ("Update2", 0, 0.001f);
         PauseButton = GameObject.FindGameObjectWithTag(PauseButtonTag);
         PauseButtonRange = PauseButton.GetComponent<RectTransform>().rect.width;
     }
  
-	void Update2()
+	void Update()
 	{
 		if (Input.GetButtonDown ("Fire1"))
 		{

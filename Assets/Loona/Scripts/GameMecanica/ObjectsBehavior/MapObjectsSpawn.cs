@@ -26,7 +26,7 @@ public class MapObjectsSpawn : MonoBehaviour
         float PlanetXMax = PlanetObjectSize.transform.position.x + PlanetObjectSize.radius + 1;
         float PlanetYMin = PlanetObjectSize.transform.position.y - PlanetObjectSize.radius + 1;
         float PlanetYMax = PlanetObjectSize.transform.position.y + PlanetObjectSize.radius + 1;
-        BGLimits BGLimitsObject = new BGLimits();
+        BGLimits BGLimitsObject = gameObject.AddComponent<BGLimits>();
         Bounds BGLimits = BGLimitsObject.getBGLimits();
         for (int i = 0; i < amount; i++)
         {

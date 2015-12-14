@@ -6,9 +6,9 @@ public class CandyEater : MonoBehaviour
     private Transform PlayerTransform;
     private GameObject PlayerController, PlayerScaler;
     private MapObjectsSpawn MapsObjectsSpawnObject;
-    public float TimeStepUpdate, MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
-    public float TimeToDestroy = 1f;
+    public float MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
     private GameObject Player;
+    private bool FollowTrigger = false;
     // Use this for initialization
     void Start()
     {
@@ -21,17 +21,19 @@ public class CandyEater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (FollowTrigger)
+            Follow();
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "ColisorPlayer")
         {
             Destroy(GetComponent<Rigidbody2D>());
             Player = other.gameObject;
-            InvokeRepeating("Follow", 0, TimeStepUpdate);
             PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
             GetComponent<CircleCollider2D>().enabled = false;
+            FollowTrigger = true;
 
         }
 
@@ -41,7 +43,7 @@ public class CandyEater : MonoBehaviour
     {
         float Distance = transform.position.x - Player.transform.position.x;
         Distance = Mathf.Abs(Distance);
-        if (Distance<0.1)
+        if (Distance<0.2) // Distance to Play to Destroy Candy
             Destroy(gameObject);
         Vector3 AuxVector3;
         /* Look at Player*/

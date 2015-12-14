@@ -54,7 +54,7 @@ public class ColisorPirulito : MonoBehaviour {
             AnimatorTarget.SetTrigger("Eat");
             Invoke("CallVictory", DelayTimeVictory);
         }
-		else if (other.gameObject.tag == "ColisorPlayer")
+		else if (other.gameObject.tag == "ColisorPlayer" && IsMenuAnimation)
 		{
 			Victory();
 			AnimatorTarget.SetTrigger("Eat");

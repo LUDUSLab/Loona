@@ -13,7 +13,8 @@ public class ChangeCanvasScenes : MonoBehaviour {
 	
 	}
 	public void ChangeIt(string MenuFeedBack){
-        GameObject.Find("LightEffect").SetActive(false);
 		MainCanvas.GetComponent<Animator> ().SetTrigger (MenuFeedBack);
+
+        GameObject.Find("LightEffect").SetActive(false);
 	}
 }

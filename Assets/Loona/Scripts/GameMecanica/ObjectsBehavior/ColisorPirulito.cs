@@ -12,12 +12,14 @@ public class ColisorPirulito : MonoBehaviour {
     public float DelayTimeVictory = 1f;
     private bool AnimationEnabled = true;
 	public bool IsMenuAnimation = false;
+	public string ActualStagePref;
     // Use this for initialization
     void Start () {
         // Modified By JMG
         PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
         AnimatorTarget = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
         controller = GameObject.Find("Pivo");
+		ActualStagePref = Application.loadedLevelName;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +52,7 @@ public class ColisorPirulito : MonoBehaviour {
             Victory();
             AnimatorTarget.SetTrigger("Eat");
             GetComponent<CircleCollider2D>().enabled = false;
-            Time.timeScale = 0.5f;
+            //Time.timeScale = 0.5f;
             AnimatorTarget.SetTrigger("Eat");
             Invoke("CallVictory", DelayTimeVictory);
         }
@@ -59,7 +61,7 @@ public class ColisorPirulito : MonoBehaviour {
 			Victory();
 			AnimatorTarget.SetTrigger("Eat");
 			GetComponent<CircleCollider2D>().enabled = false;
-			Time.timeScale = 0.5f;
+			//Time.timeScale = 0.5f;
 			AnimatorTarget.SetTrigger("Eat");
 			Invoke("CallVictory", DelayTimeVictory);
 		}
@@ -70,6 +72,7 @@ public class ColisorPirulito : MonoBehaviour {
     }
      void CallVictory(){
         if (!IsMenuAnimation) {
+			PlayerPrefs.SetInt(ActualStagePref, 1);
 			Time.timeScale = 0;
 			controller.GetComponent<Animator> ().SetTrigger ("Victory");
 		}

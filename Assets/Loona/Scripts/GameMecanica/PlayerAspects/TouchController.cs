@@ -8,6 +8,7 @@ public class TouchController : MonoBehaviour {
     private Vector3 mousePos;
     private Vector3 DeltaMovement;
     private bool flag = true;
+
     public float TouchTime = 0.5f;
     [SerializeField] private float TouchTimeDelayMax = 0.1f;
     private GameObject SceneAspectsController;
@@ -32,26 +33,31 @@ public class TouchController : MonoBehaviour {
         PauseButton = GameObject.FindGameObjectWithTag(PauseButtonTag);
         PauseButtonRange = PauseButton.GetComponent<RectTransform>().rect.width;
     }
- 
+
+
 	void Update()
 	{
-		if (Input.GetButtonDown ("Fire1"))
+		if(!GameObject.Find("Tuto"))
 		{
-            TimeTouching = Time.realtimeSinceStartup;
+
+			if (Input.GetButtonDown ("Fire1"))
+			{
+	            TimeTouching = Time.realtimeSinceStartup;
+			}
+	        if(Input.GetButtonUp("Fire1"))
+	        {
+	            mousePos = Input.mousePosition;
+	            if (ButtonWasClicked(mousePos, PauseButton.gameObject.transform.position, PauseButtonRange))
+	            {
+	                return;
+	            }
+	            if(Time.realtimeSinceStartup - TimeTouching < TimeTouchingToMove)
+	            {
+	                TimeTouching = 0;
+	                Invoke("CheckPinch", TouchTimeDelayMax);
+	            }
+	        }
 		}
-        if(Input.GetButtonUp("Fire1"))
-        {
-            mousePos = Input.mousePosition;
-            if (ButtonWasClicked(mousePos, PauseButton.gameObject.transform.position, PauseButtonRange))
-            {
-                return;
-            }
-            if(Time.realtimeSinceStartup - TimeTouching < TimeTouchingToMove)
-            {
-                TimeTouching = 0;
-                Invoke("CheckPinch", TouchTimeDelayMax);
-            }
-        }
 	}
 
     private void CheckPinch()

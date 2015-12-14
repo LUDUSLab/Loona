@@ -39,7 +39,7 @@ public class OnAppPause : MonoBehaviour {// Controller that holds muted state
             if (!MutedState) AudioListener.volume = 1.0f;
         }
     }
-    void OnApplicationFocus(bool pauseState)
+   /* void OnApplicationFocus(bool pauseState)
     {
         MutedState = GetComponent<MuteSound>().GetMutedState();
         bool Paused = pauseState;
@@ -62,6 +62,6 @@ public class OnAppPause : MonoBehaviour {// Controller that holds muted state
 
             if (!MutedState) AudioListener.volume = 1.0f;
         }
-    }
+    }*/
 
 }

@@ -11,6 +11,7 @@ public class ColisorPirulito : MonoBehaviour {
     public float DelayTimeAnimation = 6f;
     public float DelayTimeVictory = 1f;
     private bool AnimationEnabled = true;
+	public bool IsMenuAnimation = false;
     // Use this for initialization
     void Start () {
         // Modified By JMG
@@ -35,6 +36,7 @@ public class ColisorPirulito : MonoBehaviour {
             }
             
         }
+
     }
 
     private void SetAnimationEnabled()
@@ -52,14 +54,25 @@ public class ColisorPirulito : MonoBehaviour {
             AnimatorTarget.SetTrigger("Eat");
             Invoke("CallVictory", DelayTimeVictory);
         }
+		else if (other.gameObject.tag == "ColisorPlayer")
+		{
+			Victory();
+			AnimatorTarget.SetTrigger("Eat");
+			GetComponent<CircleCollider2D>().enabled = false;
+			Time.timeScale = 0.5f;
+			AnimatorTarget.SetTrigger("Eat");
+			Invoke("CallVictory", DelayTimeVictory);
+		}
     }
     public void Victory() {
         //Invoke("CallVictory", VictoryAnimation.length);
-        InvokeRepeating("Follow", 0, TimeStepUpdate);
+        //InvokeRepeating("Follow", 0, TimeStepUpdate);
     }
      void CallVictory(){
-        Time.timeScale = 0;
-        controller.GetComponent<Animator>().SetTrigger("Victory");
+        if (!IsMenuAnimation) {
+			Time.timeScale = 0;
+			controller.GetComponent<Animator> ().SetTrigger ("Victory");
+		}
         Destroy(gameObject);
     }
     void Follow()

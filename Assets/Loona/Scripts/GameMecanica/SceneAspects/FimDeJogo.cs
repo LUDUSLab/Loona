@@ -9,6 +9,7 @@ public class FimDeJogo : MonoBehaviour {
     public float DelayTimeGameOverPopUp = 0.5f;
     [SerializeField]
     private string TagPlayer;
+    private bool IsDeadFlag = false;
 	// Use this for initialization
 	void Start () {
         PlayerObject = GameObject.FindGameObjectWithTag(TagPlayer);
@@ -23,9 +24,14 @@ public class FimDeJogo : MonoBehaviour {
 
     public void Morrer()
     {
-        PlayerObject.GetComponent<UnityJellySprite>().SetKinematic(true, false);
-        Instantiate(PlayerParticleDeathPrefab, PlayerObject.transform.position, Quaternion.identity);
-        Invoke("DelayGameOver", DelayTimeGameOverPopUp);
+        if(!IsDeadFlag)
+        {
+            IsDeadFlag = true;
+            PlayerObject.GetComponent<UnityJellySprite>().SetKinematic(true, false);
+            Instantiate(PlayerParticleDeathPrefab, PlayerObject.transform.position, Quaternion.identity);
+            Invoke("DelayGameOver", DelayTimeGameOverPopUp);
+        }
+        
     }
 
     private void DelayGameOver()

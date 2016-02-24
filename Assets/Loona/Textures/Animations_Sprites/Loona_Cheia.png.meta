@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: f9ef6be0f94dd9a49a638458c40d0c25
+timeCreated: 1456346555
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Loona_Cheia_0
+    21300002: Loona_Cheia_2
+    21300004: Loona_Cheia_1
+    21300006: Loona_Cheia_3
+    21300008: Loona_Cheia_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Loona_Cheia_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 138
+        width: 156
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78, y: 24}
+        - {x: 49, y: 73}
+        - {x: -64, y: 73}
+        - {x: -78, y: 51}
+        - {x: -78, y: -73}
+        - {x: 69, y: -73}
+        - {x: 69, y: -67}
+        - {x: 67, y: -65}
+        - {x: 78, y: -39}
+    - name: Loona_Cheia_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 136
+        width: 158
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 74}
+        - {x: -79, y: 32}
+        - {x: -79, y: -37}
+        - {x: -67, y: -74}
+        - {x: 79, y: -74}
+        - {x: 79, y: 64}
+        - {x: 47, y: 74}
+    - name: Loona_Cheia_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 138
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69, y: 67.5}
+        - {x: -69, y: -67.5}
+        - {x: 69, y: -67.5}
+        - {x: 69, y: 67.5}
+    - name: Loona_Cheia_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 136
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68, y: 67}
+        - {x: -68, y: -64}
+        - {x: 68, y: -64}
+        - {x: 68, y: 67}
+    - name: Loona_Cheia_4
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 71
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 29}
+        - {x: -21, y: 27}
+        - {x: -21, y: -21}
+        - {x: -10, y: -23}
+        - {x: 19, y: -23}
+        - {x: 21, y: -19}
+        - {x: 21, y: 29}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,7 +9,7 @@ public class ColisorPirulito : MonoBehaviour {
     private Transform PlayerTransform;
     private Vector3 ScalePlayer;
     public float DelayTimeAnimation = 6f;
-    public float DelayTimeVictory = 1f;
+    public float DelayTimeVictory = 3f;
     private bool AnimationEnabled = true;
 	public bool IsMenuAnimation = false;
 	public string ActualStagePref;
@@ -20,7 +20,8 @@ public class ColisorPirulito : MonoBehaviour {
         AnimatorTarget = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
         controller = GameObject.Find("Pivo");
 		ActualStagePref = Application.loadedLevelName;
-	}
+        DelayTimeVictory = 1.5f;
+}
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,9 +37,7 @@ public class ColisorPirulito : MonoBehaviour {
                 AnimationEnabled = false;
                 Invoke("SetAnimationEnabled", DelayTimeAnimation);
             }
-            
         }
-
     }
 
     private void SetAnimationEnabled()
@@ -54,6 +53,7 @@ public class ColisorPirulito : MonoBehaviour {
             GetComponent<CircleCollider2D>().enabled = false;
             //Time.timeScale = 0.5f;
             AnimatorTarget.SetTrigger("Eat");
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
             Invoke("CallVictory", DelayTimeVictory);
         }
 		else if (other.gameObject.tag == "ColisorPlayer" && IsMenuAnimation)
@@ -63,7 +63,8 @@ public class ColisorPirulito : MonoBehaviour {
 			GetComponent<CircleCollider2D>().enabled = false;
 			//Time.timeScale = 0.5f;
 			AnimatorTarget.SetTrigger("Eat");
-			Invoke("CallVictory", DelayTimeVictory);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Invoke("CallVictory", DelayTimeVictory);
 		}
     }
     public void Victory() {
@@ -71,9 +72,20 @@ public class ColisorPirulito : MonoBehaviour {
         //InvokeRepeating("Follow", 0, TimeStepUpdate);
     }
      void CallVictory(){
+        int PlayerLayer = 12;
+        int EnemyLayer = 11;
+
+        //Debug.Log("enemy ignored");
+        
+
         if (!IsMenuAnimation) {
 			PlayerPrefs.SetInt(ActualStagePref, 1);
-			Time.timeScale = 0;
+            
+            //ignorar colisão entre enemy e player
+            Physics2D.IgnoreLayerCollision(PlayerLayer, EnemyLayer, true);
+            //deixar o planeta oculto
+            
+            Time.timeScale = 0;
 			controller.GetComponent<Animator> ().SetTrigger ("Victory");
 		}
         Destroy(gameObject);

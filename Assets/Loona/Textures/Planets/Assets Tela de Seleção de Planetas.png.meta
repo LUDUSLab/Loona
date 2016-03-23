@@ -25,7 +25,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -45,11 +45,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 34
   alphaIsTransparency: 1
@@ -67,6 +68,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 53.301697}
+        - {x: -8, y: 53.301697}
+        - {x: -37, y: 44.301697}
+        - {x: -49, y: 20.301697}
+        - {x: -49, y: -34.698303}
+        - {x: -26, y: -52.698303}
+        - {x: 27, y: -52.698303}
+        - {x: 49, y: -24.698303}
+        - {x: 49, y: 30.301697}
+        - {x: 48, y: 37.301697}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_1"
       rect:
         serializedVersion: 2
@@ -77,6 +89,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5251465, y: 84.48157}
+        - {x: -26.525146, y: 84.48157}
+        - {x: -59.525146, y: 49.481567}
+        - {x: -72.52515, y: 22.481567}
+        - {x: -72.52515, y: -48.518433}
+        - {x: -18.525146, y: -83.51843}
+        - {x: 39.474854, y: -83.51843}
+        - {x: 62.474854, y: -70.51843}
+        - {x: 74.47485, y: -42.518433}
+        - {x: 74.47485, y: 20.481567}
+        - {x: 44.474854, y: 63.481567}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_2"
       rect:
         serializedVersion: 2
@@ -87,6 +111,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.8736572, y: 97.58453}
+        - {x: -32.873657, y: 97.58453}
+        - {x: -58.873657, y: 80.58453}
+        - {x: -66.87366, y: 42.584534}
+        - {x: -66.87366, y: -26.415466}
+        - {x: -27.873657, y: -97.41547}
+        - {x: 63.126343, y: -97.41547}
+        - {x: 68.12634, y: -75.41547}
+        - {x: 68.12634, y: 53.584534}
+        - {x: 64.12634, y: 64.58453}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_3"
       rect:
         serializedVersion: 2
@@ -97,6 +132,26 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.72693, y: 60.1875}
+        - {x: 117.72693, y: 68.1875}
+        - {x: 94.72693, y: 96.1875}
+        - {x: 69.72693, y: 116.1875}
+        - {x: 65.72693, y: 117.1875}
+        - {x: -11.273071, y: 117.1875}
+        - {x: -69.27307, y: 90.1875}
+        - {x: -101.27307, y: 42.1875}
+        - {x: -115.27307, y: 18.1875}
+        - {x: -117.27307, y: 2.1875}
+        - {x: -117.27307, y: -53.8125}
+        - {x: -114.27307, y: -60.8125}
+        - {x: -82.27307, y: -107.8125}
+        - {x: -64.27307, y: -115.8125}
+        - {x: -25.273071, y: -115.8125}
+        - {x: -3.2730713, y: -110.8125}
+        - {x: 50.72693, y: -81.8125}
+        - {x: 105.72693, y: -23.8125}
+        - {x: 118.72693, y: 9.1875}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_4"
       rect:
         serializedVersion: 2
@@ -107,6 +162,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.89402, y: 321.54053}
+        - {x: -45.89402, y: 176.54053}
+        - {x: -45.89402, y: -284.45947}
+        - {x: -10.89402, y: -320.45947}
+        - {x: 12.10598, y: -320.45947}
+        - {x: 47.10598, y: 268.54053}
+        - {x: 47.10598, y: 321.54053}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_5"
       rect:
         serializedVersion: 2
@@ -117,6 +180,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.179672, y: 321.54053}
+        - {x: -46.820328, y: 200.54053}
+        - {x: -52.820328, y: 129.54053}
+        - {x: -52.820328, y: -208.45947}
+        - {x: -6.8203278, y: -320.45947}
+        - {x: 9.179672, y: -320.45947}
+        - {x: 9.179672, y: -312.45947}
+        - {x: 54.179672, y: 240.54053}
+        - {x: 54.179672, y: 321.54053}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_6"
       rect:
         serializedVersion: 2
@@ -127,6 +200,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5596, y: 321.54053}
+        - {x: -69.5596, y: 148.54053}
+        - {x: -69.5596, y: -283.45947}
+        - {x: -17.5596, y: -320.45947}
+        - {x: 9.440399, y: -320.45947}
+        - {x: -26.5596, y: -205.45947}
+        - {x: 70.4404, y: 265.54053}
+        - {x: 70.4404, y: 321.54053}
     - name: "Assets Tela de Sele\xE7\xE3o de Planetas_7"
       rect:
         serializedVersion: 2
@@ -137,6 +219,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -136.43823, y: 63.540527}
+        - {x: -136.43823, y: -178.45947}
+        - {x: -59.438232, y: -320.45947}
+        - {x: -2.4382324, y: -320.45947}
+        - {x: 137.56177, y: 178.54053}
+        - {x: 137.56177, y: 321.54053}
+        - {x: 65.56177, y: 321.54053}
+        - {x: -32.438232, y: 275.54053}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

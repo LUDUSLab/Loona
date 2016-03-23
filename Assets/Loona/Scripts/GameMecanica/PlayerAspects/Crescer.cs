@@ -6,22 +6,26 @@ public class Crescer : MonoBehaviour {
 	public GameObject Player;
 	public int Interactions;
 	//public GameObject Camera;
-	private GameObject controller;
+	private GameObject controller,PlayerController;
     private Vector3 SUp, SDown,SDownMove;
 	public float MaxSize;// Modified By JMG maxscale
 	private bool GrowLoop,InteractionsController;
+
 	//public int Interactions;
 	private int InteractionsCounter;
 	void Start () {
 		//SUp = new Vector3 (ScaleAdd,ScaleAdd, 1);
 		//SDown = new Vector3 (ScaleDown, ScaleDown, 1);
-		//SDownMove = new Vector3 (ScaleDownMove,ScaleDownMove,1);
+		//SDownMove = new Vector3 (ScaleDownMove,ScaleDownMove,1);,
+		PlayerController=  GameObject.FindGameObjectWithTag("PlayerController");
 		Player = GameObject.FindGameObjectWithTag("Player");
 		controller = GameObject.FindGameObjectWithTag ("GameController");
+
 	}
 	public void MassAddUp(GameObject Player,float ScaleAdd){
 		// Modified By JMG if (Player.GetComponent<UnityJellySprite> ().m_Mass < MaxSize) {
-		if(Player.transform.localScale.x < MaxSize)
+		Vector3 PlayerSize = PlayerController.GetComponent<ScaleTrack>().CheckPlayerSize();
+		if(PlayerSize.x < MaxSize)
 		{
 			iTween.ScaleAdd(Player,new Vector3 (ScaleAdd,ScaleAdd,1),1f);
 			Camera.main.orthographicSize = Camera.main.orthographicSize + ScaleAdd/4;

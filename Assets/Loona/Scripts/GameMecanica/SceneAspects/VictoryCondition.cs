@@ -12,6 +12,7 @@ public class VictoryCondition : MonoBehaviour {
         MissionObjective = GameObject.FindGameObjectWithTag("MissionObjective");
         PlayerController=  GameObject.FindGameObjectWithTag("PlayerController");
         MissionObjectiveSize = MissionObjective.GetComponent<CircleCollider2D>().bounds.size;
+		PlayerController.GetComponent<Crescer> ().MaxSize = MissionObjectiveSize.x + ScaleOffset; // Tamanho máximo
         InvokeRepeating("CompareSize", 1, TimeToCheckSize);
     }
 	

@@ -3,11 +3,10 @@ using System.Collections;
 
 public class AddScore : MonoBehaviour {
     public int ScoreToAdd;
-    public string SceneAspectsControllerTag;
-    private GameObject SceneAspectsController;
+    public GameObject SceneAspectsController;
 	// Use this for initialization
 	void Start () {
-        SceneAspectsController = GameObject.FindGameObjectWithTag(SceneAspectsControllerTag);
+		SceneAspectsController = GameObject.FindGameObjectWithTag ("SceneAspectsController");
     }
 	
 	// Update is called once per frame
@@ -19,7 +18,9 @@ public class AddScore : MonoBehaviour {
 
         if (other.gameObject.tag == "ColisorPlayer")
         {
-            SceneAspectsController.GetComponent<ScoreManager>().SetScore(ScoreToAdd);
+			bool WinningCondition = SceneAspectsController.GetComponent<VictoryCondition> ().GetWinningCurrentCondition ();
+			if(!WinningCondition)
+           	 SceneAspectsController.GetComponent<ScoreManager>().SetScore(ScoreToAdd);
         }
     }
 }

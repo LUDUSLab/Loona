@@ -7,11 +7,13 @@ public class CandyEater : MonoBehaviour
     private GameObject PlayerController, PlayerScaler;
     private MapObjectsSpawn MapsObjectsSpawnObject;
     public float MoveSpeed, RotantionSpeed, ScaleAddedToPlayer;
+	public GameObject SceneAspectsController;
     private GameObject Player;
     private bool FollowTrigger = false;
     // Use this for initialization
     void Start()
     {
+		SceneAspectsController = GameObject.FindGameObjectWithTag ("SceneAspectsController");
         PlayerController = GameObject.FindGameObjectWithTag("PlayerController");
         PlayerScaler = GameObject.Find("loona_v3(Clone)");
         PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
@@ -27,15 +29,17 @@ public class CandyEater : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "ColisorPlayer")
-        {
-            Destroy(GetComponent<Rigidbody2D>());
-            Player = other.gameObject;
-            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
-            GetComponent<CircleCollider2D>().enabled = false;
-            FollowTrigger = true;
+		bool WinningCondition = SceneAspectsController.GetComponent<VictoryCondition> ().GetWinningCurrentCondition ();
+		if(!WinningCondition)
+	        if (other.gameObject.tag == "ColisorPlayer")
+	        {
+	            Destroy(GetComponent<Rigidbody2D>());
+	            Player = other.gameObject;
+	            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
+	            GetComponent<CircleCollider2D>().enabled = false;
+	            FollowTrigger = true;
 
-        }
+	        }
 
         //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
     }

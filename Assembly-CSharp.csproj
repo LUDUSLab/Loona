@@ -57,6 +57,7 @@
      <Compile Include="Assets\JellySprites\Scripts\JellySprite.cs" />
      <Compile Include="Assets\JellySprites\Scripts\JellySpriteReferencePoint.cs" />
      <Compile Include="Assets\JellySprites\Scripts\UnityJellySprite.cs" />
+     <Compile Include="Assets\LookAt.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\BGLimits.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\SpawnOnRandomPoints.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\BG Scripts\TeleportController.cs" />
@@ -88,6 +89,7 @@
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\Tiro.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\PlayerAspects\TouchController.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\AjustarCamera.cs" />
+     <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\ArrowAtivation.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraScaleToPlayer.cs" />
      <Compile Include="Assets\Loona\Scripts\GameMecanica\SceneAspects\CameraShake.cs" />
@@ -112,10 +114,6 @@
      <Compile Include="Assets\RunAway2.cs" />
      <Compile Include="Assets\Startunpaused.cs" />
      <Compile Include="Assets\WalkingDead.cs" />
-     <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
-     <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
-     <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
-     <Compile Include="Assets\iTween\iTween.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
@@ -173,6 +171,10 @@
  <Reference Include="GroupPlayLibrary">
  <HintPath>/Users/ueagames/Documents/LudusProjects/Loona/Assets/Plugins/GroupPlayLibrary.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{DF82D452-13BC-1004-106A-9DE8C5828546}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

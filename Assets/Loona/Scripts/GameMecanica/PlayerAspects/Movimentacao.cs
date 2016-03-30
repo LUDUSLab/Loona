@@ -12,9 +12,10 @@ public class Movimentacao : MonoBehaviour {
 	[SerializeField] private string LostMassTag = "MassaPerdida";
 	[SerializeField] private string PlayerTag = "Player";
 	[SerializeField] private string ReferencePointsTag = "ReferencePoints";
-    public bool IsPushMovement;
-	//[SerializeField] private string Controller = "GameController";
-	//public float movimentPorcentReduction;
+    [SerializeField] private string PushOrPopPlayerPrefs = "PushOrPopPlayerPrefs";
+    //public bool IsPushMovement;
+    //[SerializeField] private string Controller = "GameController";
+    //public float movimentPorcentReduction;
 
     // Use this for initialization
     void Start () {
@@ -25,7 +26,8 @@ public class Movimentacao : MonoBehaviour {
     }
     public void Mover(float horizontal, float vertical, ForceMode2D mode)
     {
-        if(IsPushMovement)
+        //Debug.Log("log " + PlayerPrefs.GetInt(PushOrPopPlayerPrefs));
+        if (PlayerPrefs.GetInt(PushOrPopPlayerPrefs) == 0)
         {
             direcao = new Vector2(-horizontal, -vertical);
             GetComponent<Tiro>().Atirar(horizontal, vertical, ForceMode2D.Force);

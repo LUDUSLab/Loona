@@ -18,6 +18,7 @@ public class ButtonController : MonoBehaviour {
     public GameObject ExitPopUp;
     public string SkipMissionTrigger = "SkipMission";
     public GameObject PivoObject;
+    
     // Use this for initialization
 
     void Start () {
@@ -50,6 +51,8 @@ public class ButtonController : MonoBehaviour {
 			}
 		}
 	}
+    
+
 	public void LoadScene(string Scene){
             Fade.GetComponent<Animator>().SetBool("Fade", true);
             PlayerPrefs.SetString("NextScene", Scene);

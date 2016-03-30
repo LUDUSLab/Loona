@@ -110,6 +110,7 @@
      <Compile Include="Assets\Loona\Scripts\Menus\SetActivePlanet.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\SoundController.cs" />
      <Compile Include="Assets\Loona\Scripts\Menus\fade3.cs" />
+     <Compile Include="Assets\Loona\Scripts\Testing\DebugEnumerator.cs" />
      <Compile Include="Assets\Loona\Scripts\Testing\DebugOnTriggerCollision.cs" />
      <Compile Include="Assets\RunAway2.cs" />
      <Compile Include="Assets\Startunpaused.cs" />

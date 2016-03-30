@@ -47,8 +47,8 @@ public class CandyEater : MonoBehaviour
     {
         float Distance = transform.position.x - Player.transform.position.x;
         Distance = Mathf.Abs(Distance);
-        if (Distance<0.2) // Distance to Play to Destroy Candy
-            Destroy(gameObject);
+        if (Distance<0.2) // Distance to Player to Destroy Candy
+			DestroyNow();
         Vector3 AuxVector3;
         /* Look at Player*/
         AuxVector3 = new Vector3((PlayerTransform.position.x - transform.position.x), (PlayerTransform.position.y - transform.position.y), (PlayerTransform.position.z - transform.position.z));
@@ -61,6 +61,7 @@ public class CandyEater : MonoBehaviour
     void DestroyNow()
     {
         MapsObjectsSpawnObject.InstantiateMapObjects(1, this.gameObject);
+
         Destroy(gameObject);
     }
 }

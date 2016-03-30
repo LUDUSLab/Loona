@@ -29,8 +29,8 @@ public class CandyEater : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-		bool WinningCondition = SceneAspectsController.GetComponent<VictoryCondition> ().GetWinningCurrentCondition ();
-		if(!WinningCondition)
+		bool CanStillEatCandy = SceneAspectsController.GetComponent<VictoryCondition> ().CanStillGroll ();
+		if(CanStillEatCandy)
 	        if (other.gameObject.tag == "ColisorPlayer")
 	        {
 	            Destroy(GetComponent<Rigidbody2D>());
@@ -38,7 +38,6 @@ public class CandyEater : MonoBehaviour
 	            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
 	            GetComponent<CircleCollider2D>().enabled = false;
 	            FollowTrigger = true;
-
 	        }
 
         //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))

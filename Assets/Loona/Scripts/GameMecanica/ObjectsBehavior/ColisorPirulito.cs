@@ -5,7 +5,7 @@ public class ColisorPirulito : MonoBehaviour {
     public float TimeStepUpdate, MoveSpeed, RotantionSpeed;
     public AnimationClip VictoryAnimation;
     [SerializeField] private Animator AnimatorTarget;
-    private GameObject controller;
+	private GameObject controller,SceneAspectsController;
     private Transform PlayerTransform;
     private Vector3 ScalePlayer;
     public float DelayTimeAnimation = 6f;
@@ -18,6 +18,7 @@ public class ColisorPirulito : MonoBehaviour {
         // Modified By JMG
         PlayerTransform = GameObject.FindGameObjectWithTag("ColisorPlayer").transform;
         AnimatorTarget = GameObject.FindGameObjectWithTag ("PlayerExpressions").GetComponent<Animator>();
+		SceneAspectsController = GameObject.Find ("SceneAspectsController");
         controller = GameObject.Find("Pivo");
 		ActualStagePref = Application.loadedLevelName;
         DelayTimeVictory = 1.5f;
@@ -49,17 +50,27 @@ public class ColisorPirulito : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             Victory();
-            AnimatorTarget.SetTrigger("Eat");
+			if (!AnimatorTarget.isActiveAndEnabled) {
+				AnimatorTarget.gameObject.transform.parent.gameObject.transform.FindChild ("Loona_Cheia").gameObject.SetActive (false);
+				AnimatorTarget.gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+				AnimatorTarget.enabled = true;
+				AnimatorTarget.SetTrigger("Eat");
+				SceneAspectsController.GetComponent<VictoryCondition> ().SetWinningCondition ();
+			}
             GetComponent<CircleCollider2D>().enabled = false;
             //Time.timeScale = 0.5f;
-            AnimatorTarget.SetTrigger("Eat");
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             Invoke("CallVictory", DelayTimeVictory);
         }
 		else if (other.gameObject.tag == "ColisorPlayer" && IsMenuAnimation)
 		{
 			Victory();
-			AnimatorTarget.SetTrigger("Eat");
+			if (!AnimatorTarget.isActiveAndEnabled) {
+				AnimatorTarget.gameObject.transform.parent.gameObject.transform.FindChild ("Loona_Cheia").gameObject.SetActive (false);
+				AnimatorTarget.gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+				AnimatorTarget.enabled = true;
+				AnimatorTarget.SetTrigger("Eat");
+			}
 			GetComponent<CircleCollider2D>().enabled = false;
 			//Time.timeScale = 0.5f;
 			AnimatorTarget.SetTrigger("Eat");

@@ -10,6 +10,9 @@ public class CandyEater : MonoBehaviour
 	public GameObject SceneAspectsController;
     private GameObject Player;
     private bool FollowTrigger = false;
+    //
+   
+    //
     // Use this for initialization
     void Start()
     {
@@ -60,8 +63,15 @@ public class CandyEater : MonoBehaviour
     void DestroyNow()
     {
         MapsObjectsSpawnObject.InstantiateMapObjects(1, this.gameObject);
-
+        //
+        GameObject.Find("FoodsAggregator").GetComponent<Animator>().SetBool("PlaySoundON", true);
+        GameObject.Find("FoodsAggregator").GetComponent<PlayAnimatorSoundDelayed>().RestartAnimationWithNoSound();
+        //Invoke("SetPlaySoundFalse", DelayTime);
+        //
         Destroy(gameObject);
     }
+    //
+    
+    //
 }
 

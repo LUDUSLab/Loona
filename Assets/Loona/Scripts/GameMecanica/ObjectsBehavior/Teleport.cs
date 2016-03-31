@@ -9,6 +9,9 @@ public class Teleport : MonoBehaviour {
     private GameObject CentralPoint;
     private int RandomNumber;
     private float CoolDown;
+    //
+    public float DelayTime = 0.5f;
+    //
     // Use this for initialization
     void Start () {
         PlayerTag = TeleportController.GetComponent<TeleportController>().PlayerTag;
@@ -37,11 +40,22 @@ public class Teleport : MonoBehaviour {
             for (int i = 0; i < ReferencePoints.Length; i++)
             {
                 ReferencePoints[i].transform.position = PlayerNextPosition;
-            } 
+            }
+            //
+            GetComponent<Animator>().SetBool("PlaySound", true);
+            Invoke("SetPlaySoundFalse", DelayTime);
+            //
             Invoke("ActivateCollider", CoolDown);
             Invoke("ActivateDestinationTeleport", CoolDown);
         }
     }
+    //
+    private void SetPlaySoundFalse()
+    {
+        GetComponent<Animator>().SetBool("PlaySound", false);
+    }
+    //
+
     void DesactivateCollider()
     {
         GetComponent<Collider2D>().enabled = false;

@@ -4,6 +4,7 @@ using System.Collections;
 public class TeleportDrag : MonoBehaviour {
     private GameObject PullOBJ;
     public float ForceSpeed;
+    public float DelayTime = 0.5f;
 
     public void OnTriggerStay2D(Collider2D coll)
     {
@@ -15,8 +16,17 @@ public class TeleportDrag : MonoBehaviour {
                 (PullOBJ.transform.position,
                  transform.position,
                  ForceSpeed * Time.deltaTime);
+
+            GetComponentInParent<Animator>().SetBool("PlaySound", true);
+            Invoke("SetPlaySoundFalse", DelayTime);
+            
         }
     }
+    private void SetPlaySoundFalse()
+    {
+        GetComponentInParent<Animator>().SetBool("PlaySound", false);
+    }
+
     // Use this for initialization
     void Start()
     {

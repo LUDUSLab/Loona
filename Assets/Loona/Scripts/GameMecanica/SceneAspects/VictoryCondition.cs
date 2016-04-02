@@ -11,7 +11,7 @@ public class VictoryCondition : MonoBehaviour {
 	private GameObject FullLoona;
     private Vector3 MissionObjectiveSize;
 	private Vector3 PlayerSize;
-    public GameObject Arrow;
+    public bool Arrow;
     // Use this for initialization
     void Start () {
         MissionObjective = GameObject.FindGameObjectWithTag("MissionObjective");
@@ -40,7 +40,7 @@ public class VictoryCondition : MonoBehaviour {
 			PlayerExpressions.GetComponent<Animator> ().enabled = true;
 			PlayerExpressions.GetComponent<SpriteRenderer> ().enabled = true;
 
-            Arrow.SetActive(false);
+            Arrow = false;
         }
         else
         {
@@ -52,7 +52,7 @@ public class VictoryCondition : MonoBehaviour {
 				FullLoona.GetComponent<Animator> ().enabled = true;
 				PlayerExpressions.GetComponent<Animator> ().enabled = false;
 				PlayerExpressions.GetComponent<SpriteRenderer> ().enabled = false;
-				Arrow.SetActive (true);
+				Arrow = true;
 			}
         }
     }

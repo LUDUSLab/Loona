@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
-
 
 public class LookAt : MonoBehaviour {
     public Transform target,arrow;
@@ -15,18 +13,11 @@ public class LookAt : MonoBehaviour {
         arrow = GameObject.FindGameObjectWithTag("Player").transform;
     }
      void FixedUpdate()
-    {
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-
-        }
-        else
-        {
-            direction = target.position - arrow.transform.position;
-            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-            //Debug.Log(direction)
-        }
+    { 
+        direction = target.position-arrow.transform.position;
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        //Debug.Log(direction)
     }
 }

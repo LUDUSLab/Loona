@@ -51,8 +51,7 @@ public class ColisorPirulito : MonoBehaviour {
         {
             Victory();
 			if (!AnimatorTarget.isActiveAndEnabled) {
-				//AnimatorTarget.gameObject.transform.parent.FindChild ("Loona_Cheia").gameObject.SetActive (false);
-                GameObject.Find("Loona_Cheia").SetActive(false);
+				AnimatorTarget.gameObject.transform.parent.gameObject.transform.FindChild ("Loona_Cheia").gameObject.SetActive (false);
 				AnimatorTarget.gameObject.GetComponent<SpriteRenderer> ().enabled = true;
 				AnimatorTarget.enabled = true;
 				AnimatorTarget.SetTrigger("Eat");
@@ -67,8 +66,7 @@ public class ColisorPirulito : MonoBehaviour {
 		{
 			Victory();
 			if (!AnimatorTarget.isActiveAndEnabled) {
-				//AnimatorTarget.gameObject.transform.parent.gameObject.transform.FindChild ("Loona_Cheia").gameObject.SetActive (false);
-                GameObject.Find("Loona_Cheia").SetActive(false);
+				AnimatorTarget.gameObject.transform.parent.gameObject.transform.FindChild ("Loona_Cheia").gameObject.SetActive (false);
 				AnimatorTarget.gameObject.GetComponent<SpriteRenderer> ().enabled = true;
 				AnimatorTarget.enabled = true;
 				AnimatorTarget.SetTrigger("Eat");

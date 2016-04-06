@@ -15,4 +15,7 @@ public class follow : MonoBehaviour {
 	void Update () {
         transform.position = target.transform.position;
 	}
+
+
+
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class ActivrObject : MonoBehaviour {
 
     // Use this for initialization
@@ -22,28 +22,36 @@ public class ActivrObject : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Arrow = GameObject.FindGameObjectWithTag("SceneAspectsController").GetComponent<VictoryCondition>().Arrow;
-        Seta = GameObject.FindGameObjectWithTag("Arrow").GetComponent<SpriteRenderer>();
-        Go = GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>();
+        
 
-        if (Arrow)
-        {
-            Go.enabled = true;
-            Seta.enabled = true;
-            
-            Debug.Log("True");
+        if (SceneManager.GetActiveScene().name == "Menu"){
 
-        }
-        if (!Arrow)
-        {
            
+           // Debug.Log("Prestou");
+
+
             Seta.enabled = false;
             Go.enabled = false;
-
-            Debug.Log("false");
-
         }
+        else
+        {
+            Arrow = GameObject.FindGameObjectWithTag("SceneAspectsController").GetComponent<VictoryCondition>().Arrow;
+            Seta = GameObject.FindGameObjectWithTag("Arrow").GetComponent<SpriteRenderer>();
+            Go = GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>();
+            if (Arrow)
+            {
+                Go.enabled = true;
+                Seta.enabled = true;
+                Debug.Log("True");
+            }
+            if (!Arrow)
+            {
 
+                Seta.enabled = false;
+                Go.enabled = false;
 
-    }
+                Debug.Log("false");
+            }
+        }
+    }        
 }

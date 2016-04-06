@@ -120,6 +120,7 @@
      <Compile Include="Assets\RunAway2.cs" />
      <Compile Include="Assets\Startunpaused.cs" />
      <Compile Include="Assets\WalkingDead.cs" />
+     <Compile Include="Assets\follow.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />

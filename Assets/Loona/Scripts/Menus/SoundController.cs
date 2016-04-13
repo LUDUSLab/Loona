@@ -18,6 +18,10 @@ public class SoundController : MonoBehaviour {
             MusicaMenu();
         //}
 	}
+    public void StopMusicaStage()
+    {
+        Stage.Stop();    
+    }
 	public void MusicaMenu(){
 		Menu.Play();		
 	}

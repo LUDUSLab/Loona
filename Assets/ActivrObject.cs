@@ -6,7 +6,7 @@ public class ActivrObject : MonoBehaviour {
     // Use this for initialization
     private bool Arrow;
     public SpriteRenderer Seta;
-    public SpriteRenderer Go;
+ //   public SpriteRenderer Go;
 
 
     // Use this for initialization
@@ -14,7 +14,7 @@ public class ActivrObject : MonoBehaviour {
     {
         /// Go.sortingLayerName = "Foreground";
         // Seta.sortingLayerName = "Foreground";
-        Go.sortingLayerName = "Background";
+      //  Go.sortingLayerName = "Background";
         Seta.sortingLayerName = "Background";
 
     }
@@ -24,23 +24,23 @@ public class ActivrObject : MonoBehaviour {
     {
         Arrow = GameObject.FindGameObjectWithTag("SceneAspectsController").GetComponent<VictoryCondition>().Arrow;
         Seta = GameObject.FindGameObjectWithTag("Arrow").GetComponent<SpriteRenderer>();
-        Go = GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>();
+     //   Go = GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>();
 
         if (Arrow)
         {
-            Go.enabled = true;
+          ///  Go.enabled = true;
             Seta.enabled = true;
             
-            Debug.Log("True");
+            //Debug.Log("True");
 
         }
         if (!Arrow)
         {
            
             Seta.enabled = false;
-            Go.enabled = false;
+           // Go.enabled = false;
 
-            Debug.Log("false");
+           // Debug.Log("false");
 
         }
 

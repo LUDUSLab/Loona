@@ -22,7 +22,8 @@ public class ColisorPirulito : MonoBehaviour {
         controller = GameObject.Find("Pivo");
 		ActualStagePref = Application.loadedLevelName;
         DelayTimeVictory = 1.5f;
-}
+        Physics2D.IgnoreLayerCollision(12, 11, false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -94,8 +95,11 @@ public class ColisorPirulito : MonoBehaviour {
             
             //ignorar colisão entre enemy e player
             Physics2D.IgnoreLayerCollision(PlayerLayer, EnemyLayer, true);
+
+         
+
             //deixar o planeta oculto
-            
+
             Time.timeScale = 0;
 			controller.GetComponent<Animator> ().SetTrigger ("Victory");
 		}
@@ -111,4 +115,7 @@ public class ColisorPirulito : MonoBehaviour {
         /* Move at Player*/
         transform.position += (transform.forward) * MoveSpeed * Time.deltaTime;
     }
+
+
+
 }

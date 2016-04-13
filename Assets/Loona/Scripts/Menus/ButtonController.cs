@@ -54,13 +54,15 @@ public class ButtonController : MonoBehaviour {
     
 
 	public void LoadScene(string Scene){
-            Fade.GetComponent<Animator>().SetBool("Fade", true);
-            PlayerPrefs.SetString("NextScene", Scene);
+        PlayerPrefs.SetString("NextScene", Scene);
+        Fade.GetComponent<Animator>().SetBool("Fade", true);
+           
 	}
     public void LoadGame()
     {
-        Fade.GetComponent<Animator>().SetBool("Fade", true);
+     
         PlayerPrefs.SetString("NextScene", GameSceneName);
+        Fade.GetComponent<Animator>().SetBool("Fade", true);
     }
 
 	public void Pause(string pause)

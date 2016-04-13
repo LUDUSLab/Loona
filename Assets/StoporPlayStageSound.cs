@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StopStageSound : StateMachineBehaviour {
+public class StoporPlayStageSound : StateMachineBehaviour {
 
+    public bool StopSound;
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        //GameObject.Find("SoundController").GetComponent<>;
-        //StopMusicaStage();
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if(StopSound)
+        {
+            GameObject.Find("SoundController").GetComponent<SoundController>().StopMusicaStage();
+        }
+        else
+        {
+            GameObject.Find("SoundController").GetComponent<SoundController>().MusicaStage();
+        }
+        
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

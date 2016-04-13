@@ -119,7 +119,7 @@
      <Compile Include="Assets\PlaySound.cs" />
      <Compile Include="Assets\RunAway2.cs" />
      <Compile Include="Assets\Startunpaused.cs" />
-     <Compile Include="Assets\StopStageSound.cs" />
+     <Compile Include="Assets\StoporPlayStageSound.cs" />
      <Compile Include="Assets\WalkingDead.cs" />
      <Compile Include="Assets\follow.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />

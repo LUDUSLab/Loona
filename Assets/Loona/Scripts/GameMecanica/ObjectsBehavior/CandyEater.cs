@@ -32,18 +32,21 @@ public class CandyEater : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-		bool CanStillEatCandy = SceneAspectsController.GetComponent<VictoryCondition> ().CanStillGroll ();
-		if(CanStillEatCandy)
-	        if (other.gameObject.tag == "ColisorPlayer")
-	        {
-	            Destroy(GetComponent<Rigidbody2D>());
-	            Player = other.gameObject;
-	            PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
-	            GetComponent<CircleCollider2D>().enabled = false;
-	            FollowTrigger = true;
-	        }
+        if (other.gameObject.tag == "ColisorPlayer")
+        {
+            bool CanStillEatCandy = SceneAspectsController.GetComponent<VictoryCondition>().CanStillGroll();
+            if (CanStillEatCandy)
+                if (other.gameObject.tag == "ColisorPlayer")
+                {
+                    Destroy(GetComponent<Rigidbody2D>());
+                    Player = other.gameObject;
+                    PlayerController.GetComponent<Crescer>().MassAddUp(PlayerScaler, ScaleAddedToPlayer);
+                    GetComponent<CircleCollider2D>().enabled = false;
+                    FollowTrigger = true;
+                }
 
-        //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
+            //if( anim_Animator.GetCurrentAnimatorStateInfo(0).IsName("MyAnimationName"))
+        }
     }
     void Follow()
     {

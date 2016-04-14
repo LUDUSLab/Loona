@@ -21,22 +21,30 @@ public class MapObjectsSpawn : MonoBehaviour
     }
     public void InstantiateMapObjects(int amount, GameObject ObjectPrefabParam)
     {
-        if (gameObject.GetComponent<BGLimits>() != null)
-        {
-            return;
-        }
+        
+      
         CircleCollider2D PlanetObjectSize = PlanetObject.GetComponent<CircleCollider2D>();
         float PlanetXMin = PlanetObjectSize.transform.position.x - PlanetObjectSize.radius + 1;
         float PlanetXMax = PlanetObjectSize.transform.position.x + PlanetObjectSize.radius + 1;
         float PlanetYMin = PlanetObjectSize.transform.position.y - PlanetObjectSize.radius + 1;
         float PlanetYMax = PlanetObjectSize.transform.position.y + PlanetObjectSize.radius + 1;
+
+        BGLimits BGLimitsObject;
+
+        if (gameObject.GetComponent<BGLimits>() == null)
+        {
+            BGLimitsObject = gameObject.AddComponent<BGLimits>();
+        }
+        else
+        {
+            BGLimitsObject = gameObject.GetComponent<BGLimits>();
+        }
         
-        BGLimits BGLimitsObject = gameObject.AddComponent<BGLimits>();
         Bounds BGLimits = BGLimitsObject.getBGLimits();
         for (int i = 0; i < amount; i++)
         {
             Object = Instantiate(ObjectPrefab);
-
+            
             vector3 = new Vector3((int)Random.Range(BGLimits.min.x, BGLimits.max.x),
                 (int)Random.Range(BGLimits.min.y, BGLimits.max.y),
                 0);
